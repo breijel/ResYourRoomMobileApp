@@ -8,7 +8,10 @@
 
 import UIKit
 
-class ThirdViewController : UIViewController{
+class ResOverviewViewController : UIViewController{
+    
+    // MARK: property
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
