@@ -17,6 +17,10 @@
 		795800F01D5A308C0001E06A /* ReserverYourRoomUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 795800EF1D5A308C0001E06A /* ReserverYourRoomUITests.swift */; };
 		795800FE1D5A3DFF0001E06A /* ResOverviewViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 795800FD1D5A3DFF0001E06A /* ResOverviewViewController.swift */; };
 		795800FF1D5A3DFF0001E06A /* ResOverviewViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 795800FD1D5A3DFF0001E06A /* ResOverviewViewController.swift */; };
+		79F68E0F1D5E56E00067BDA8 /* Raum.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79F68E0E1D5E56E00067BDA8 /* Raum.swift */; };
+		79F68E111D5E5B1D0067BDA8 /* Wunsch.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79F68E101D5E5B1D0067BDA8 /* Wunsch.swift */; };
+		79F68E131D5E5D460067BDA8 /* Adresse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79F68E121D5E5D460067BDA8 /* Adresse.swift */; };
+		79F68E151D5E5E7D0067BDA8 /* Gebaeude.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79F68E141D5E5E7D0067BDA8 /* Gebaeude.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -52,6 +56,10 @@
 		795800EF1D5A308C0001E06A /* ReserverYourRoomUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReserverYourRoomUITests.swift; sourceTree = "<group>"; };
 		795800F11D5A308C0001E06A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		795800FD1D5A3DFF0001E06A /* ResOverviewViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ResOverviewViewController.swift; sourceTree = "<group>"; };
+		79F68E0E1D5E56E00067BDA8 /* Raum.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Raum.swift; sourceTree = "<group>"; };
+		79F68E101D5E5B1D0067BDA8 /* Wunsch.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Wunsch.swift; sourceTree = "<group>"; };
+		79F68E121D5E5D460067BDA8 /* Adresse.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Adresse.swift; sourceTree = "<group>"; };
+		79F68E141D5E5E7D0067BDA8 /* Gebaeude.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Gebaeude.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -102,6 +110,7 @@
 		795800CC1D5A308C0001E06A /* ReserverYourRoom */ = {
 			isa = PBXGroup;
 			children = (
+				79F68E0D1D5E56620067BDA8 /* DataModel */,
 				795800CD1D5A308C0001E06A /* AppDelegate.swift */,
 				795800CF1D5A308C0001E06A /* RoomOverviewViewController.swift */,
 				795800D11D5A308C0001E06A /* RoomSearchViewController.swift */,
@@ -130,6 +139,17 @@
 				795800F11D5A308C0001E06A /* Info.plist */,
 			);
 			path = ReserverYourRoomUITests;
+			sourceTree = "<group>";
+		};
+		79F68E0D1D5E56620067BDA8 /* DataModel */ = {
+			isa = PBXGroup;
+			children = (
+				79F68E0E1D5E56E00067BDA8 /* Raum.swift */,
+				79F68E101D5E5B1D0067BDA8 /* Wunsch.swift */,
+				79F68E121D5E5D460067BDA8 /* Adresse.swift */,
+				79F68E141D5E5E7D0067BDA8 /* Gebaeude.swift */,
+			);
+			name = DataModel;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -264,9 +284,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				795800D21D5A308C0001E06A /* RoomSearchViewController.swift in Sources */,
+				79F68E111D5E5B1D0067BDA8 /* Wunsch.swift in Sources */,
 				795800CE1D5A308C0001E06A /* AppDelegate.swift in Sources */,
+				79F68E151D5E5E7D0067BDA8 /* Gebaeude.swift in Sources */,
 				795800FE1D5A3DFF0001E06A /* ResOverviewViewController.swift in Sources */,
+				79F68E131D5E5D460067BDA8 /* Adresse.swift in Sources */,
 				795800D01D5A308C0001E06A /* RoomOverviewViewController.swift in Sources */,
+				79F68E0F1D5E56E00067BDA8 /* Raum.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
