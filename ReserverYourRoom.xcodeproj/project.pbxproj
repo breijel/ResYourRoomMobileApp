@@ -17,10 +17,16 @@
 		795800F01D5A308C0001E06A /* ReserverYourRoomUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 795800EF1D5A308C0001E06A /* ReserverYourRoomUITests.swift */; };
 		795800FE1D5A3DFF0001E06A /* ResOverviewViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 795800FD1D5A3DFF0001E06A /* ResOverviewViewController.swift */; };
 		795800FF1D5A3DFF0001E06A /* ResOverviewViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 795800FD1D5A3DFF0001E06A /* ResOverviewViewController.swift */; };
-		79F68E0F1D5E56E00067BDA8 /* Raum.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79F68E0E1D5E56E00067BDA8 /* Raum.swift */; };
-		79F68E111D5E5B1D0067BDA8 /* Wunsch.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79F68E101D5E5B1D0067BDA8 /* Wunsch.swift */; };
-		79F68E131D5E5D460067BDA8 /* Adresse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79F68E121D5E5D460067BDA8 /* Adresse.swift */; };
-		79F68E151D5E5E7D0067BDA8 /* Gebaeude.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79F68E141D5E5E7D0067BDA8 /* Gebaeude.swift */; };
+		79866A511D60D4E0002787F5 /* Infrastructure.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79866A501D60D4E0002787F5 /* Infrastructure.swift */; };
+		79866A531D60D700002787F5 /* Reservation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79866A521D60D700002787F5 /* Reservation.swift */; };
+		79866A541D60D700002787F5 /* Reservation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79866A521D60D700002787F5 /* Reservation.swift */; };
+		79866A561D60D9F7002787F5 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79866A551D60D9F7002787F5 /* User.swift */; };
+		79866A571D60D9F7002787F5 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79866A551D60D9F7002787F5 /* User.swift */; };
+		79866A591D60DAA7002787F5 /* Wish.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79866A581D60DAA7002787F5 /* Wish.swift */; };
+		79866A5A1D60DAA7002787F5 /* Wish.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79866A581D60DAA7002787F5 /* Wish.swift */; };
+		79F68E0F1D5E56E00067BDA8 /* Room.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79F68E0E1D5E56E00067BDA8 /* Room.swift */; };
+		79F68E131D5E5D460067BDA8 /* Address.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79F68E121D5E5D460067BDA8 /* Address.swift */; };
+		79F68E151D5E5E7D0067BDA8 /* Building.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79F68E141D5E5E7D0067BDA8 /* Building.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -56,10 +62,13 @@
 		795800EF1D5A308C0001E06A /* ReserverYourRoomUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReserverYourRoomUITests.swift; sourceTree = "<group>"; };
 		795800F11D5A308C0001E06A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		795800FD1D5A3DFF0001E06A /* ResOverviewViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ResOverviewViewController.swift; sourceTree = "<group>"; };
-		79F68E0E1D5E56E00067BDA8 /* Raum.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Raum.swift; sourceTree = "<group>"; };
-		79F68E101D5E5B1D0067BDA8 /* Wunsch.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Wunsch.swift; sourceTree = "<group>"; };
-		79F68E121D5E5D460067BDA8 /* Adresse.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Adresse.swift; sourceTree = "<group>"; };
-		79F68E141D5E5E7D0067BDA8 /* Gebaeude.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Gebaeude.swift; sourceTree = "<group>"; };
+		79866A501D60D4E0002787F5 /* Infrastructure.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Infrastructure.swift; sourceTree = "<group>"; };
+		79866A521D60D700002787F5 /* Reservation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Reservation.swift; sourceTree = "<group>"; };
+		79866A551D60D9F7002787F5 /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		79866A581D60DAA7002787F5 /* Wish.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Wish.swift; sourceTree = "<group>"; };
+		79F68E0E1D5E56E00067BDA8 /* Room.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Room.swift; sourceTree = "<group>"; };
+		79F68E121D5E5D460067BDA8 /* Address.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Address.swift; sourceTree = "<group>"; };
+		79F68E141D5E5E7D0067BDA8 /* Building.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Building.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -144,10 +153,13 @@
 		79F68E0D1D5E56620067BDA8 /* DataModel */ = {
 			isa = PBXGroup;
 			children = (
-				79F68E0E1D5E56E00067BDA8 /* Raum.swift */,
-				79F68E101D5E5B1D0067BDA8 /* Wunsch.swift */,
-				79F68E121D5E5D460067BDA8 /* Adresse.swift */,
-				79F68E141D5E5E7D0067BDA8 /* Gebaeude.swift */,
+				79F68E0E1D5E56E00067BDA8 /* Room.swift */,
+				79F68E121D5E5D460067BDA8 /* Address.swift */,
+				79F68E141D5E5E7D0067BDA8 /* Building.swift */,
+				79866A501D60D4E0002787F5 /* Infrastructure.swift */,
+				79866A521D60D700002787F5 /* Reservation.swift */,
+				79866A551D60D9F7002787F5 /* User.swift */,
+				79866A581D60DAA7002787F5 /* Wish.swift */,
 			);
 			name = DataModel;
 			sourceTree = "<group>";
@@ -284,13 +296,16 @@
 			buildActionMask = 2147483647;
 			files = (
 				795800D21D5A308C0001E06A /* RoomSearchViewController.swift in Sources */,
-				79F68E111D5E5B1D0067BDA8 /* Wunsch.swift in Sources */,
+				79866A531D60D700002787F5 /* Reservation.swift in Sources */,
 				795800CE1D5A308C0001E06A /* AppDelegate.swift in Sources */,
-				79F68E151D5E5E7D0067BDA8 /* Gebaeude.swift in Sources */,
+				79866A591D60DAA7002787F5 /* Wish.swift in Sources */,
+				79866A511D60D4E0002787F5 /* Infrastructure.swift in Sources */,
+				79F68E151D5E5E7D0067BDA8 /* Building.swift in Sources */,
 				795800FE1D5A3DFF0001E06A /* ResOverviewViewController.swift in Sources */,
-				79F68E131D5E5D460067BDA8 /* Adresse.swift in Sources */,
+				79F68E131D5E5D460067BDA8 /* Address.swift in Sources */,
 				795800D01D5A308C0001E06A /* RoomOverviewViewController.swift in Sources */,
-				79F68E0F1D5E56E00067BDA8 /* Raum.swift in Sources */,
+				79F68E0F1D5E56E00067BDA8 /* Room.swift in Sources */,
+				79866A561D60D9F7002787F5 /* User.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -298,8 +313,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				79866A5A1D60DAA7002787F5 /* Wish.swift in Sources */,
+				79866A571D60D9F7002787F5 /* User.swift in Sources */,
 				795800FF1D5A3DFF0001E06A /* ResOverviewViewController.swift in Sources */,
 				795800E51D5A308C0001E06A /* ReserverYourRoomTests.swift in Sources */,
+				79866A541D60D700002787F5 /* Reservation.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
