@@ -21,4 +21,8 @@ class Building{
         self.rooms = rooms
         self.name = name
     }
+    
+    func getNumberOfRooms() -> Int {
+        return self.rooms.count
+    }
 }
