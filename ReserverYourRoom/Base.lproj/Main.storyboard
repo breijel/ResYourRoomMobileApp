@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10117" systemVersion="15G31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="49e-Tb-3d3">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10117" systemVersion="15F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="49e-Tb-3d3">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
@@ -18,18 +18,61 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" misplaced="YES" text="Raumsuche" textAlignment="center" lineBreakMode="tailTruncation" minimumFontSize="10" translatesAutoresizingMaskIntoConstraints="NO" id="zEq-FU-wV5">
-                                <rect key="frame" x="92" y="313" width="193" height="42"/>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="tr5-Nu-mVC">
+                                <rect key="frame" x="98" y="48" width="200" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="h7T-Rs-b5R">
+                                <rect key="frame" x="98" y="130" width="200" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="von" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="neq-9E-Q0o">
+                                <rect key="frame" x="49" y="52" width="28" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="whS-Ec-fOf">
+                                <rect key="frame" x="103" y="186" width="52" height="30"/>
+                                <state key="normal" title="Suchen"/>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dWY-BB-xTs">
+                                <rect key="frame" x="222" y="186" width="76" height="30"/>
+                                <state key="normal" title="Abbrechen"/>
+                            </button>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="yxb-ko-r2l">
+                                <rect key="frame" x="67" y="245" width="240" height="324"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <fontDescription key="fontDescription" name="Helvetica" family="Helvetica" pointSize="36"/>
-                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                            </tableView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="bis" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="p7Q-RT-WyG">
+                                <rect key="frame" x="54" y="133" width="23" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstAttribute="centerX" secondItem="zEq-FU-wV5" secondAttribute="centerX" id="qqM-NS-xev"/>
-                            <constraint firstAttribute="centerY" secondItem="zEq-FU-wV5" secondAttribute="centerY" id="qzY-Ky-pLD"/>
+                            <constraint firstItem="tr5-Nu-mVC" firstAttribute="trailing" secondItem="h7T-Rs-b5R" secondAttribute="trailing" id="0NW-iW-tmc"/>
+                            <constraint firstItem="Djb-ko-YwX" firstAttribute="top" secondItem="yxb-ko-r2l" secondAttribute="bottom" constant="49" id="3KP-S3-Nwk"/>
+                            <constraint firstItem="tr5-Nu-mVC" firstAttribute="leading" secondItem="neq-9E-Q0o" secondAttribute="trailing" constant="21" id="9Jl-0s-iHB"/>
+                            <constraint firstItem="whS-Ec-fOf" firstAttribute="top" secondItem="h7T-Rs-b5R" secondAttribute="bottom" constant="26" id="Biq-Pc-fzU"/>
+                            <constraint firstItem="dWY-BB-xTs" firstAttribute="leading" secondItem="whS-Ec-fOf" secondAttribute="trailing" constant="67" id="DkK-eP-YL2"/>
+                            <constraint firstItem="neq-9E-Q0o" firstAttribute="leading" secondItem="QS5-Rx-YEW" secondAttribute="leadingMargin" constant="33" id="HhH-xq-XoH"/>
+                            <constraint firstItem="h7T-Rs-b5R" firstAttribute="trailing" secondItem="dWY-BB-xTs" secondAttribute="trailing" id="LpG-iy-bbO"/>
+                            <constraint firstItem="yxb-ko-r2l" firstAttribute="leading" secondItem="QS5-Rx-YEW" secondAttribute="leadingMargin" constant="51" id="REJ-zd-0re"/>
+                            <constraint firstItem="neq-9E-Q0o" firstAttribute="trailing" secondItem="p7Q-RT-WyG" secondAttribute="trailing" id="S6A-qR-S13"/>
+                            <constraint firstItem="whS-Ec-fOf" firstAttribute="leading" secondItem="QS5-Rx-YEW" secondAttribute="leadingMargin" constant="87" id="Xdi-NK-RSV"/>
+                            <constraint firstItem="tr5-Nu-mVC" firstAttribute="top" secondItem="L7p-HK-0SC" secondAttribute="bottom" constant="28" id="ZXF-aU-bNw"/>
+                            <constraint firstItem="yxb-ko-r2l" firstAttribute="centerX" secondItem="QS5-Rx-YEW" secondAttribute="centerX" id="aOg-bK-Anf"/>
+                            <constraint firstItem="neq-9E-Q0o" firstAttribute="centerY" secondItem="tr5-Nu-mVC" secondAttribute="centerY" id="eCD-of-J7l"/>
+                            <constraint firstItem="yxb-ko-r2l" firstAttribute="top" secondItem="whS-Ec-fOf" secondAttribute="bottom" constant="29" id="faN-lP-VaU"/>
+                            <constraint firstItem="tr5-Nu-mVC" firstAttribute="leading" secondItem="h7T-Rs-b5R" secondAttribute="leading" id="gOa-LI-161"/>
+                            <constraint firstItem="p7Q-RT-WyG" firstAttribute="baseline" secondItem="h7T-Rs-b5R" secondAttribute="baseline" id="tth-ah-OhH"/>
+                            <constraint firstItem="h7T-Rs-b5R" firstAttribute="top" secondItem="tr5-Nu-mVC" secondAttribute="bottom" constant="52" id="ual-bP-4iJ"/>
+                            <constraint firstItem="whS-Ec-fOf" firstAttribute="baseline" secondItem="dWY-BB-xTs" secondAttribute="baseline" id="yna-1O-4OZ"/>
                         </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="Raum suchen" image="imageRoomSearch" selectedImage="imageRoomSearch" id="cPa-gy-q4n"/>
