@@ -30,6 +30,8 @@
 		79F68E0F1D5E56E00067BDA8 /* Room.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79F68E0E1D5E56E00067BDA8 /* Room.swift */; };
 		79F68E131D5E5D460067BDA8 /* Address.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79F68E121D5E5D460067BDA8 /* Address.swift */; };
 		79F68E151D5E5E7D0067BDA8 /* Building.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79F68E141D5E5E7D0067BDA8 /* Building.swift */; };
+		A980E104BFD5CD895467A625 /* Pods_ReserverYourRoom.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FE5BF882845C5C4BBA9981DD /* Pods_ReserverYourRoom.framework */; };
+		F09BD65F1D87EEFB005E10EE /* RestConnectionManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = F09BD65E1D87EEFB005E10EE /* RestConnectionManager.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -50,6 +52,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		4EFCDAEFBC6284C732984460 /* Pods-ReserverYourRoom.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ReserverYourRoom.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ReserverYourRoom/Pods-ReserverYourRoom.debug.xcconfig"; sourceTree = "<group>"; };
 		794E6B231D6393DD00F877CC /* RomOvRoomListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RomOvRoomListViewController.swift; sourceTree = "<group>"; };
 		795800CA1D5A308C0001E06A /* ReserverYourRoom.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ReserverYourRoom.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		795800CD1D5A308C0001E06A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -73,6 +76,9 @@
 		79F68E0E1D5E56E00067BDA8 /* Room.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Room.swift; sourceTree = "<group>"; };
 		79F68E121D5E5D460067BDA8 /* Address.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Address.swift; sourceTree = "<group>"; };
 		79F68E141D5E5E7D0067BDA8 /* Building.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Building.swift; sourceTree = "<group>"; };
+		7C23B934C45FD4CB3B46EEC2 /* Pods-ReserverYourRoom.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ReserverYourRoom.release.xcconfig"; path = "Pods/Target Support Files/Pods-ReserverYourRoom/Pods-ReserverYourRoom.release.xcconfig"; sourceTree = "<group>"; };
+		F09BD65E1D87EEFB005E10EE /* RestConnectionManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RestConnectionManager.swift; sourceTree = "<group>"; };
+		FE5BF882845C5C4BBA9981DD /* Pods_ReserverYourRoom.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ReserverYourRoom.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -80,6 +86,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A980E104BFD5CD895467A625 /* Pods_ReserverYourRoom.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -142,6 +149,8 @@
 				795800E31D5A308C0001E06A /* ReserverYourRoomTests */,
 				795800EE1D5A308C0001E06A /* ReserverYourRoomUITests */,
 				795800CB1D5A308C0001E06A /* Products */,
+				CFE1EBBC63BCD726BDF15FC1 /* Pods */,
+				82E013C302C6DEE45FEA9564 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -158,6 +167,7 @@
 		795800CC1D5A308C0001E06A /* ReserverYourRoom */ = {
 			isa = PBXGroup;
 			children = (
+				F09BD65D1D87EEE8005E10EE /* RESTClient */,
 				794E6B281D6394CF00F877CC /* Views */,
 				79F68E0D1D5E56620067BDA8 /* DataModel */,
 				795800CD1D5A308C0001E06A /* AppDelegate.swift */,
@@ -201,6 +211,31 @@
 			name = DataModel;
 			sourceTree = "<group>";
 		};
+		82E013C302C6DEE45FEA9564 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				FE5BF882845C5C4BBA9981DD /* Pods_ReserverYourRoom.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		CFE1EBBC63BCD726BDF15FC1 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				4EFCDAEFBC6284C732984460 /* Pods-ReserverYourRoom.debug.xcconfig */,
+				7C23B934C45FD4CB3B46EEC2 /* Pods-ReserverYourRoom.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		F09BD65D1D87EEE8005E10EE /* RESTClient */ = {
+			isa = PBXGroup;
+			children = (
+				F09BD65E1D87EEFB005E10EE /* RestConnectionManager.swift */,
+			);
+			name = RESTClient;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -208,9 +243,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 795800F41D5A308C0001E06A /* Build configuration list for PBXNativeTarget "ReserverYourRoom" */;
 			buildPhases = (
+				F00D00E7E1F347E267DDD383 /* [CP] Check Pods Manifest.lock */,
 				795800C61D5A308C0001E06A /* Sources */,
 				795800C71D5A308C0001E06A /* Frameworks */,
 				795800C81D5A308C0001E06A /* Resources */,
+				2B795DFFD8C7BF0CA4120150 /* [CP] Embed Pods Frameworks */,
+				55283B63572891C8C93E374B /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -328,6 +366,54 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		2B795DFFD8C7BF0CA4120150 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-ReserverYourRoom/Pods-ReserverYourRoom-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		55283B63572891C8C93E374B /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-ReserverYourRoom/Pods-ReserverYourRoom-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		F00D00E7E1F347E267DDD383 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		795800C61D5A308C0001E06A /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
@@ -337,6 +423,7 @@
 				795800D21D5A308C0001E06A /* RomSrchViewController.swift in Sources */,
 				79866A531D60D700002787F5 /* Reservation.swift in Sources */,
 				795800CE1D5A308C0001E06A /* AppDelegate.swift in Sources */,
+				F09BD65F1D87EEFB005E10EE /* RestConnectionManager.swift in Sources */,
 				79866A591D60DAA7002787F5 /* Wish.swift in Sources */,
 				79866A511D60D4E0002787F5 /* Infrastructure.swift in Sources */,
 				79F68E151D5E5E7D0067BDA8 /* Building.swift in Sources */,
@@ -490,6 +577,7 @@
 		};
 		795800F51D5A308C0001E06A /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 4EFCDAEFBC6284C732984460 /* Pods-ReserverYourRoom.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
@@ -504,6 +592,7 @@
 		};
 		795800F61D5A308C0001E06A /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 7C23B934C45FD4CB3B46EEC2 /* Pods-ReserverYourRoom.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
