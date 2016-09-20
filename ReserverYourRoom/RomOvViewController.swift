@@ -21,7 +21,9 @@ class RomOvViewController: UIViewController, UITableViewDelegate {
         RestConnectionManager.sharedInstance.getAllUsers { (json: JSON) in
             if let results = json.array {
                 for entry in results {
-                    self.users.append(User(json: entry))
+                    let entryUser = User(json: entry)
+                    self.users.append(entryUser)
+                    print("User=\(entryUser.firstname)")
                 }
                 print("users number=\(self.users.count)")
                     
