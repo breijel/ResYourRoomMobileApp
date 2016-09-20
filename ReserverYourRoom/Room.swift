@@ -9,10 +9,10 @@
 struct Room{
     
     // MARK: Properties
-    private let floor : Int
-    private let size : Float
-    private let seatnumber : Int
-    private let name : String
+    fileprivate let floor : Int
+    fileprivate let size : Float
+    fileprivate let seatnumber : Int
+    fileprivate let name : String
     
     
     // MARK: Intitialization

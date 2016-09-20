@@ -11,12 +11,12 @@ import Foundation
 struct Reservation {
     
     // MARK: Properties
-    private let start : NSDate
-    private let end : NSDate
-    private let room : Room
+    fileprivate let start : Date
+    fileprivate let end : Date
+    fileprivate let room : Room
     
     // MARK: Initialization
-    init(room : Room, start : NSDate, end : NSDate){
+    init(room : Room, start : Date, end : Date){
         self.room = room
         self.start = start
         self.end = end

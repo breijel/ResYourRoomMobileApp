@@ -18,41 +18,40 @@ class RestConnectionManager: NSObject {
     let baseURL = "http://localhost:8080/reserveyourroom/api"
     
     // MARK: Perform a GET Request
-    private func makeHTTPGetRequest(path: String, onCompletion: ServiceResponse) {
-        let request = NSMutableURLRequest(URL: NSURL(string: path)!)
+    fileprivate func makeHTTPGetRequest(_ path: String, onCompletion: @escaping ServiceResponse) {
+        let request = NSMutableURLRequest(url: URL(string: path)!)
         
-        let session = NSURLSession.sharedSession()
-        
-        let task = session.dataTaskWithRequest(request, completionHandler: {data, response, error -> Void in
+        let task = URLSession.shared.dataTask(with: request as URLRequest) {data, response, error -> Void in
             if let jsonData = data {
                 let json:JSON = JSON(data: jsonData)
-                onCompletion(json, error)
+                onCompletion(json, error as NSError?)
             } else {
-                onCompletion(nil, error)
+                onCompletion(nil, error as NSError?)
             }
-        })
+        }
         task.resume()
     }
     
     // MARK: Perform a POST Request
-    private func makeHTTPPostRequest(path: String, body: [String: AnyObject], onCompletion: ServiceResponse) {
-        let request = NSMutableURLRequest(URL: NSURL(string: path)!)
+    fileprivate func makeHTTPPostRequest(_ path: String, body: [String: AnyObject], onCompletion: @escaping ServiceResponse) {
+        let request = NSMutableURLRequest(url: URL(string: path)!)
         
         // Set the method to POST
-        request.HTTPMethod = "POST"
+        request.httpMethod = "POST"
         
         do {
             // Set the POST body for the request
-            let jsonBody = try NSJSONSerialization.dataWithJSONObject(body, options: .PrettyPrinted)
-            request.HTTPBody = jsonBody
-            let session = NSURLSession.sharedSession()
+            let jsonBody = try JSONSerialization.data(withJSONObject: body, options: .prettyPrinted)
+            request.httpBody = jsonBody
             
-            let task = session.dataTaskWithRequest(request, completionHandler: {data, response, error -> Void in
+            let session = URLSession.shared
+            
+            let task = session.dataTask(with: request as URLRequest, completionHandler: {data, response, error -> Void in
                 if let jsonData = data {
                     let json:JSON = JSON(data: jsonData)
                     onCompletion(json, nil)
                 } else {
-                    onCompletion(nil, error)
+                    onCompletion(nil, error as NSError?)
                 }
             })
             task.resume()
@@ -62,7 +61,7 @@ class RestConnectionManager: NSObject {
         }
     }
     
-    func getAllUsers(onCompletion: (JSON) -> Void) {
+    func getAllUsers(_ onCompletion: @escaping (JSON) -> Void) {
         let route = baseURL+"/user"
         makeHTTPGetRequest(route, onCompletion: { json, err in
             onCompletion(json as JSON)

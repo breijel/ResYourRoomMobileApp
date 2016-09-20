@@ -11,7 +11,7 @@ import Foundation
 struct Infrastructure {
     
     // MARK: Properties
-    private let name : String
+    fileprivate let name : String
     
     // MARK: Initialization
     init(name : String){

@@ -9,12 +9,12 @@
 struct Address{
     
     // MARK: Properties
-    private let street : String
-    private let housenumber : String
-    private let zipcode : String
-    private let city : String
-    private let state : String
-    private let country : String
+    fileprivate let street : String
+    fileprivate let housenumber : String
+    fileprivate let zipcode : String
+    fileprivate let city : String
+    fileprivate let state : String
+    fileprivate let country : String
     
     
     // MARK: Initialization

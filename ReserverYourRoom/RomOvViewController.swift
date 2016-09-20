@@ -17,16 +17,17 @@ class RomOvViewController: UIViewController, UITableViewDelegate {
     var numberOfRooms : Int = 0
     var users = [User]()
     
-    private func addUserData(){
+    fileprivate func addUserData(){
         RestConnectionManager.sharedInstance.getAllUsers { (json: JSON) in
             if let results = json.array {
                 for entry in results {
                     self.users.append(User(json: entry))
                 }
                 print("users number=\(self.users.count)")
-                dispatch_async(dispatch_get_main_queue(),{
+                    
+                //DispatchQueue.main.asynchronously(DispatchQueue.mainexecute: {
                     self.tableRoomOverview.reloadData()
-                })
+                //})
             } else {
                 print("error: could not parse json data")
             }
@@ -58,24 +59,24 @@ class RomOvViewController: UIViewController, UITableViewDelegate {
         return numberOfRooms
     }*/
     
-    func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return self.users.count;
     }
     
-    func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell{
+    func tableView(_ tableView: UITableView, cellForRowAtIndexPath indexPath: IndexPath) -> UITableViewCell{
         //let cell = UITableViewCell(style: UITableViewCellStyle.Default, reuseIdentifier: "cellRoom")
         
         //cell.textLabel?.text = "test"
         
         //return cell
         
-        var cell = tableView.dequeueReusableCellWithIdentifier("cellRoom")
+        var cell = tableView.dequeueReusableCell(withIdentifier: "cellRoom")
         
         if cell == nil {
-            cell = UITableViewCell(style: UITableViewCellStyle.Value1, reuseIdentifier: "cellRoom")
+            cell = UITableViewCell(style: UITableViewCellStyle.value1, reuseIdentifier: "cellRoom")
         }
         
-        let user = self.users[indexPath.row]
+        let user = self.users[(indexPath as NSIndexPath).row]
         
         cell!.textLabel?.text = user.firstname
         return cell!

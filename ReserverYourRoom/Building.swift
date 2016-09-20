@@ -11,9 +11,9 @@ import Foundation
 class Building{
     
     // MARK: Properties
-    private let address : Address
-    private let rooms : [Room]
-    private let name : String
+    fileprivate let address : Address
+    fileprivate let rooms : [Room]
+    fileprivate let name : String
     
     // MARK: Initialization
     init(name : String, address : Address, rooms : [Room]){

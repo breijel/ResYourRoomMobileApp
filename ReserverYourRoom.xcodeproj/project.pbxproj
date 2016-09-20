@@ -8,25 +8,17 @@
 
 /* Begin PBXBuildFile section */
 		794E6B241D6393DD00F877CC /* RomOvRoomListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 794E6B231D6393DD00F877CC /* RomOvRoomListViewController.swift */; };
-		794E6B251D6393DD00F877CC /* RomOvRoomListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 794E6B231D6393DD00F877CC /* RomOvRoomListViewController.swift */; };
-		794E6B261D6393DD00F877CC /* RomOvRoomListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 794E6B231D6393DD00F877CC /* RomOvRoomListViewController.swift */; };
 		795800CE1D5A308C0001E06A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 795800CD1D5A308C0001E06A /* AppDelegate.swift */; };
 		795800D01D5A308C0001E06A /* RomOvViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 795800CF1D5A308C0001E06A /* RomOvViewController.swift */; };
 		795800D21D5A308C0001E06A /* RomSrchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 795800D11D5A308C0001E06A /* RomSrchViewController.swift */; };
 		795800D51D5A308C0001E06A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 795800D31D5A308C0001E06A /* Main.storyboard */; };
 		795800D71D5A308C0001E06A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 795800D61D5A308C0001E06A /* Assets.xcassets */; };
 		795800DA1D5A308C0001E06A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 795800D81D5A308C0001E06A /* LaunchScreen.storyboard */; };
-		795800E51D5A308C0001E06A /* ReserverYourRoomTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 795800E41D5A308C0001E06A /* ReserverYourRoomTests.swift */; };
-		795800F01D5A308C0001E06A /* ReserverYourRoomUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 795800EF1D5A308C0001E06A /* ReserverYourRoomUITests.swift */; };
 		795800FE1D5A3DFF0001E06A /* ResOvViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 795800FD1D5A3DFF0001E06A /* ResOvViewController.swift */; };
-		795800FF1D5A3DFF0001E06A /* ResOvViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 795800FD1D5A3DFF0001E06A /* ResOvViewController.swift */; };
 		79866A511D60D4E0002787F5 /* Infrastructure.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79866A501D60D4E0002787F5 /* Infrastructure.swift */; };
 		79866A531D60D700002787F5 /* Reservation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79866A521D60D700002787F5 /* Reservation.swift */; };
-		79866A541D60D700002787F5 /* Reservation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79866A521D60D700002787F5 /* Reservation.swift */; };
 		79866A561D60D9F7002787F5 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79866A551D60D9F7002787F5 /* User.swift */; };
-		79866A571D60D9F7002787F5 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79866A551D60D9F7002787F5 /* User.swift */; };
 		79866A591D60DAA7002787F5 /* Wish.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79866A581D60DAA7002787F5 /* Wish.swift */; };
-		79866A5A1D60DAA7002787F5 /* Wish.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79866A581D60DAA7002787F5 /* Wish.swift */; };
 		79F68E0F1D5E56E00067BDA8 /* Room.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79F68E0E1D5E56E00067BDA8 /* Room.swift */; };
 		79F68E131D5E5D460067BDA8 /* Address.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79F68E121D5E5D460067BDA8 /* Address.swift */; };
 		79F68E151D5E5E7D0067BDA8 /* Building.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79F68E141D5E5E7D0067BDA8 /* Building.swift */; };
@@ -34,25 +26,13 @@
 		F09BD65F1D87EEFB005E10EE /* RestConnectionManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = F09BD65E1D87EEFB005E10EE /* RestConnectionManager.swift */; };
 /* End PBXBuildFile section */
 
-/* Begin PBXContainerItemProxy section */
-		795800E11D5A308C0001E06A /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 795800C21D5A308C0001E06A /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 795800C91D5A308C0001E06A;
-			remoteInfo = ReserverYourRoom;
-		};
-		795800EC1D5A308C0001E06A /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 795800C21D5A308C0001E06A /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 795800C91D5A308C0001E06A;
-			remoteInfo = ReserverYourRoom;
-		};
-/* End PBXContainerItemProxy section */
-
 /* Begin PBXFileReference section */
+		161C2B8235D7276E4516DB42 /* Pods-ReserverYourRoomTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ReserverYourRoomTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-ReserverYourRoomTests/Pods-ReserverYourRoomTests.release.xcconfig"; sourceTree = "<group>"; };
+		1FD9495EFC9BE27C1DBBDD99 /* Pods-ReserverYourRoomUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ReserverYourRoomUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ReserverYourRoomUITests/Pods-ReserverYourRoomUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		24CE7D5D62CA25645FF5C8CC /* Pods-ReserverYourRoomUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ReserverYourRoomUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-ReserverYourRoomUITests/Pods-ReserverYourRoomUITests.release.xcconfig"; sourceTree = "<group>"; };
+		3278A4C56F2AAB28882BA18C /* Pods-ReserverYourRoomTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ReserverYourRoomTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ReserverYourRoomTests/Pods-ReserverYourRoomTests.debug.xcconfig"; sourceTree = "<group>"; };
 		4EFCDAEFBC6284C732984460 /* Pods-ReserverYourRoom.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ReserverYourRoom.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ReserverYourRoom/Pods-ReserverYourRoom.debug.xcconfig"; sourceTree = "<group>"; };
+		734F11E291F986860C22642F /* Pods_ReserverYourRoomTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ReserverYourRoomTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		794E6B231D6393DD00F877CC /* RomOvRoomListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RomOvRoomListViewController.swift; sourceTree = "<group>"; };
 		795800CA1D5A308C0001E06A /* ReserverYourRoom.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ReserverYourRoom.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		795800CD1D5A308C0001E06A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -62,12 +42,6 @@
 		795800D61D5A308C0001E06A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		795800D91D5A308C0001E06A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		795800DB1D5A308C0001E06A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		795800E01D5A308C0001E06A /* ReserverYourRoomTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ReserverYourRoomTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		795800E41D5A308C0001E06A /* ReserverYourRoomTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReserverYourRoomTests.swift; sourceTree = "<group>"; };
-		795800E61D5A308C0001E06A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		795800EB1D5A308C0001E06A /* ReserverYourRoomUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ReserverYourRoomUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		795800EF1D5A308C0001E06A /* ReserverYourRoomUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReserverYourRoomUITests.swift; sourceTree = "<group>"; };
-		795800F11D5A308C0001E06A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		795800FD1D5A3DFF0001E06A /* ResOvViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ResOvViewController.swift; sourceTree = "<group>"; };
 		79866A501D60D4E0002787F5 /* Infrastructure.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Infrastructure.swift; sourceTree = "<group>"; };
 		79866A521D60D700002787F5 /* Reservation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Reservation.swift; sourceTree = "<group>"; };
@@ -77,6 +51,7 @@
 		79F68E121D5E5D460067BDA8 /* Address.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Address.swift; sourceTree = "<group>"; };
 		79F68E141D5E5E7D0067BDA8 /* Building.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Building.swift; sourceTree = "<group>"; };
 		7C23B934C45FD4CB3B46EEC2 /* Pods-ReserverYourRoom.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ReserverYourRoom.release.xcconfig"; path = "Pods/Target Support Files/Pods-ReserverYourRoom/Pods-ReserverYourRoom.release.xcconfig"; sourceTree = "<group>"; };
+		A24BBCC99B3C582F4841670C /* Pods_ReserverYourRoomUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ReserverYourRoomUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		F09BD65E1D87EEFB005E10EE /* RestConnectionManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RestConnectionManager.swift; sourceTree = "<group>"; };
 		FE5BF882845C5C4BBA9981DD /* Pods_ReserverYourRoom.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ReserverYourRoom.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -87,20 +62,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				A980E104BFD5CD895467A625 /* Pods_ReserverYourRoom.framework in Frameworks */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		795800DD1D5A308C0001E06A /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		795800E81D5A308C0001E06A /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -146,8 +107,6 @@
 			isa = PBXGroup;
 			children = (
 				795800CC1D5A308C0001E06A /* ReserverYourRoom */,
-				795800E31D5A308C0001E06A /* ReserverYourRoomTests */,
-				795800EE1D5A308C0001E06A /* ReserverYourRoomUITests */,
 				795800CB1D5A308C0001E06A /* Products */,
 				CFE1EBBC63BCD726BDF15FC1 /* Pods */,
 				82E013C302C6DEE45FEA9564 /* Frameworks */,
@@ -158,8 +117,6 @@
 			isa = PBXGroup;
 			children = (
 				795800CA1D5A308C0001E06A /* ReserverYourRoom.app */,
-				795800E01D5A308C0001E06A /* ReserverYourRoomTests.xctest */,
-				795800EB1D5A308C0001E06A /* ReserverYourRoomUITests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -177,24 +134,6 @@
 				795800DB1D5A308C0001E06A /* Info.plist */,
 			);
 			path = ReserverYourRoom;
-			sourceTree = "<group>";
-		};
-		795800E31D5A308C0001E06A /* ReserverYourRoomTests */ = {
-			isa = PBXGroup;
-			children = (
-				795800E41D5A308C0001E06A /* ReserverYourRoomTests.swift */,
-				795800E61D5A308C0001E06A /* Info.plist */,
-			);
-			path = ReserverYourRoomTests;
-			sourceTree = "<group>";
-		};
-		795800EE1D5A308C0001E06A /* ReserverYourRoomUITests */ = {
-			isa = PBXGroup;
-			children = (
-				795800EF1D5A308C0001E06A /* ReserverYourRoomUITests.swift */,
-				795800F11D5A308C0001E06A /* Info.plist */,
-			);
-			path = ReserverYourRoomUITests;
 			sourceTree = "<group>";
 		};
 		79F68E0D1D5E56620067BDA8 /* DataModel */ = {
@@ -215,6 +154,8 @@
 			isa = PBXGroup;
 			children = (
 				FE5BF882845C5C4BBA9981DD /* Pods_ReserverYourRoom.framework */,
+				734F11E291F986860C22642F /* Pods_ReserverYourRoomTests.framework */,
+				A24BBCC99B3C582F4841670C /* Pods_ReserverYourRoomUITests.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -224,6 +165,10 @@
 			children = (
 				4EFCDAEFBC6284C732984460 /* Pods-ReserverYourRoom.debug.xcconfig */,
 				7C23B934C45FD4CB3B46EEC2 /* Pods-ReserverYourRoom.release.xcconfig */,
+				3278A4C56F2AAB28882BA18C /* Pods-ReserverYourRoomTests.debug.xcconfig */,
+				161C2B8235D7276E4516DB42 /* Pods-ReserverYourRoomTests.release.xcconfig */,
+				1FD9495EFC9BE27C1DBBDD99 /* Pods-ReserverYourRoomUITests.debug.xcconfig */,
+				24CE7D5D62CA25645FF5C8CC /* Pods-ReserverYourRoomUITests.release.xcconfig */,
 			);
 			name = Pods;
 			sourceTree = "<group>";
@@ -259,42 +204,6 @@
 			productReference = 795800CA1D5A308C0001E06A /* ReserverYourRoom.app */;
 			productType = "com.apple.product-type.application";
 		};
-		795800DF1D5A308C0001E06A /* ReserverYourRoomTests */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 795800F71D5A308C0001E06A /* Build configuration list for PBXNativeTarget "ReserverYourRoomTests" */;
-			buildPhases = (
-				795800DC1D5A308C0001E06A /* Sources */,
-				795800DD1D5A308C0001E06A /* Frameworks */,
-				795800DE1D5A308C0001E06A /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				795800E21D5A308C0001E06A /* PBXTargetDependency */,
-			);
-			name = ReserverYourRoomTests;
-			productName = ReserverYourRoomTests;
-			productReference = 795800E01D5A308C0001E06A /* ReserverYourRoomTests.xctest */;
-			productType = "com.apple.product-type.bundle.unit-test";
-		};
-		795800EA1D5A308C0001E06A /* ReserverYourRoomUITests */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 795800FA1D5A308C0001E06A /* Build configuration list for PBXNativeTarget "ReserverYourRoomUITests" */;
-			buildPhases = (
-				795800E71D5A308C0001E06A /* Sources */,
-				795800E81D5A308C0001E06A /* Frameworks */,
-				795800E91D5A308C0001E06A /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				795800ED1D5A308C0001E06A /* PBXTargetDependency */,
-			);
-			name = ReserverYourRoomUITests;
-			productName = ReserverYourRoomUITests;
-			productReference = 795800EB1D5A308C0001E06A /* ReserverYourRoomUITests.xctest */;
-			productType = "com.apple.product-type.bundle.ui-testing";
-		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -302,20 +211,13 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 0730;
-				LastUpgradeCheck = 0730;
+				LastUpgradeCheck = 0800;
 				ORGANIZATIONNAME = mattafix;
 				TargetAttributes = {
 					795800C91D5A308C0001E06A = {
 						CreatedOnToolsVersion = 7.3.1;
 						DevelopmentTeam = SB69ZL37DW;
-					};
-					795800DF1D5A308C0001E06A = {
-						CreatedOnToolsVersion = 7.3.1;
-						TestTargetID = 795800C91D5A308C0001E06A;
-					};
-					795800EA1D5A308C0001E06A = {
-						CreatedOnToolsVersion = 7.3.1;
-						TestTargetID = 795800C91D5A308C0001E06A;
+						LastSwiftMigration = 0800;
 					};
 				};
 			};
@@ -333,8 +235,6 @@
 			projectRoot = "";
 			targets = (
 				795800C91D5A308C0001E06A /* ReserverYourRoom */,
-				795800DF1D5A308C0001E06A /* ReserverYourRoomTests */,
-				795800EA1D5A308C0001E06A /* ReserverYourRoomUITests */,
 			);
 		};
 /* End PBXProject section */
@@ -347,20 +247,6 @@
 				795800DA1D5A308C0001E06A /* LaunchScreen.storyboard in Resources */,
 				795800D71D5A308C0001E06A /* Assets.xcassets in Resources */,
 				795800D51D5A308C0001E06A /* Main.storyboard in Resources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		795800DE1D5A308C0001E06A /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		795800E91D5A308C0001E06A /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -435,42 +321,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		795800DC1D5A308C0001E06A /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				794E6B251D6393DD00F877CC /* RomOvRoomListViewController.swift in Sources */,
-				79866A5A1D60DAA7002787F5 /* Wish.swift in Sources */,
-				79866A571D60D9F7002787F5 /* User.swift in Sources */,
-				795800FF1D5A3DFF0001E06A /* ResOvViewController.swift in Sources */,
-				795800E51D5A308C0001E06A /* ReserverYourRoomTests.swift in Sources */,
-				79866A541D60D700002787F5 /* Reservation.swift in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		795800E71D5A308C0001E06A /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				794E6B261D6393DD00F877CC /* RomOvRoomListViewController.swift in Sources */,
-				795800F01D5A308C0001E06A /* ReserverYourRoomUITests.swift in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXSourcesBuildPhase section */
-
-/* Begin PBXTargetDependency section */
-		795800E21D5A308C0001E06A /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = 795800C91D5A308C0001E06A /* ReserverYourRoom */;
-			targetProxy = 795800E11D5A308C0001E06A /* PBXContainerItemProxy */;
-		};
-		795800ED1D5A308C0001E06A /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = 795800C91D5A308C0001E06A /* ReserverYourRoom */;
-			targetProxy = 795800EC1D5A308C0001E06A /* PBXContainerItemProxy */;
-		};
-/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		795800D31D5A308C0001E06A /* Main.storyboard */ = {
@@ -506,8 +357,10 @@
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
@@ -551,8 +404,10 @@
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
@@ -571,6 +426,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
 				VALIDATE_PRODUCT = YES;
 			};
 			name = Release;
@@ -579,6 +435,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 4EFCDAEFBC6284C732984460 /* Pods-ReserverYourRoom.debug.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
@@ -587,6 +444,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.mattafix.ReserverYourRoom;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
+				SWIFT_VERSION = 3.0;
 			};
 			name = Debug;
 		};
@@ -594,6 +452,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 7C23B934C45FD4CB3B46EEC2 /* Pods-ReserverYourRoom.release.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
@@ -602,52 +461,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.mattafix.ReserverYourRoom;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
-			};
-			name = Release;
-		};
-		795800F81D5A308C0001E06A /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				BUNDLE_LOADER = "$(TEST_HOST)";
-				INFOPLIST_FILE = ReserverYourRoomTests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.mattafix.ReserverYourRoomTests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/ReserverYourRoom.app/ReserverYourRoom";
-			};
-			name = Debug;
-		};
-		795800F91D5A308C0001E06A /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				BUNDLE_LOADER = "$(TEST_HOST)";
-				INFOPLIST_FILE = ReserverYourRoomTests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.mattafix.ReserverYourRoomTests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/ReserverYourRoom.app/ReserverYourRoom";
-			};
-			name = Release;
-		};
-		795800FB1D5A308C0001E06A /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				INFOPLIST_FILE = ReserverYourRoomUITests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.mattafix.ReserverYourRoomUITests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				TEST_TARGET_NAME = ReserverYourRoom;
-			};
-			name = Debug;
-		};
-		795800FC1D5A308C0001E06A /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				INFOPLIST_FILE = ReserverYourRoomUITests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.mattafix.ReserverYourRoomUITests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				TEST_TARGET_NAME = ReserverYourRoom;
+				SWIFT_VERSION = 3.0;
 			};
 			name = Release;
 		};
@@ -668,24 +482,6 @@
 			buildConfigurations = (
 				795800F51D5A308C0001E06A /* Debug */,
 				795800F61D5A308C0001E06A /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		795800F71D5A308C0001E06A /* Build configuration list for PBXNativeTarget "ReserverYourRoomTests" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				795800F81D5A308C0001E06A /* Debug */,
-				795800F91D5A308C0001E06A /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		795800FA1D5A308C0001E06A /* Build configuration list for PBXNativeTarget "ReserverYourRoomUITests" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				795800FB1D5A308C0001E06A /* Debug */,
-				795800FC1D5A308C0001E06A /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
