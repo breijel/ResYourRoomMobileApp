@@ -17,30 +17,12 @@ class RomOvViewController: UIViewController, UITableViewDelegate {
     var numberOfRooms : Int = 0
     var users = [User]()
     
-    fileprivate func addUserData(){
-        RestConnectionManager.sharedInstance.getAllUsers { (json: JSON) in
-            if let results = json.array {
-                for entry in results {
-                    let entryUser = User(json: entry)
-                    self.users.append(entryUser)
-                    print("User=\(entryUser.firstname)")
-                }
-                print("users number=\(self.users.count)")
-                    
-                //DispatchQueue.main.asynchronously(DispatchQueue.mainexecute: {
-                    self.tableRoomOverview.reloadData()
-                //})
-            } else {
-                print("error: could not parse json data")
-            }
-        }
-    }
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
         
-        self.addUserData()
+        let users = RestService.sharedInstance.getAllUsers();
+        print(users.count)
         
         
     }
@@ -83,7 +65,7 @@ class RomOvViewController: UIViewController, UITableViewDelegate {
         cell!.textLabel?.text = user.firstname
         return cell!
     }
-    /*
+    
     func testREST(){
         
         let configuration = NSURLSessionConfiguration.defaultSessionConfiguration()
@@ -134,6 +116,6 @@ class RomOvViewController: UIViewController, UITableViewDelegate {
             }
         }
         dataTask.resume()
-    }*/
+    }
 }
 

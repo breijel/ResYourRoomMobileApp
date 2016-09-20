@@ -15,10 +15,8 @@ typealias ServiceResponse = (JSON, NSError?) -> Void
 class RestConnectionManager: NSObject {
     static let sharedInstance = RestConnectionManager()
     
-    let baseURL = "http://localhost:8080/reserveyourroom/api"
-    
     // MARK: Perform a GET Request
-    fileprivate func makeHTTPGetRequest(_ path: String, onCompletion: @escaping ServiceResponse) {
+    func makeHTTPGetRequest(_ path: String, onCompletion: @escaping ServiceResponse) {
         let request = NSMutableURLRequest(url: URL(string: path)!)
         
         let task = URLSession.shared.dataTask(with: request as URLRequest) {data, response, error -> Void in
@@ -33,7 +31,7 @@ class RestConnectionManager: NSObject {
     }
     
     // MARK: Perform a POST Request
-    fileprivate func makeHTTPPostRequest(_ path: String, body: [String: AnyObject], onCompletion: @escaping ServiceResponse) {
+    func makeHTTPPostRequest(_ path: String, body: [String: AnyObject], onCompletion: @escaping ServiceResponse) {
         let request = NSMutableURLRequest(url: URL(string: path)!)
         
         // Set the method to POST
@@ -61,10 +59,5 @@ class RestConnectionManager: NSObject {
         }
     }
     
-    func getAllUsers(_ onCompletion: @escaping (JSON) -> Void) {
-        let route = baseURL+"/user"
-        makeHTTPGetRequest(route, onCompletion: { json, err in
-            onCompletion(json as JSON)
-        })
-    }
+
 }
