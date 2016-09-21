@@ -16,25 +16,18 @@ class RestService: NSObject {
     
     let baseURL = "http://localhost:8080/reserveyourroom/api"
     
-    func getAllUsers() -> [User]{
-        
-        var users = [User]()
-        
+    func getAllUsers(_ onCompletion: @escaping (JSON) -> Void) {
         let route = baseURL+"/user"
-        RestConnectionManager.sharedInstance.makeHTTPGetRequest(route, onCompletion: { (json, err) in
-            
-            if let httpResponse = json.array {
-                for entry in httpResponse {
-                    let entryUser = User(json: entry)
-                    users.append(entryUser)
-                }
-                print("in=\(users.count)")
-            } else {
-                print("error: could not parse json data")
-            }
+        RestConnectionManager.sharedInstance.makeHTTPGetRequest(route, onCompletion: { json, err in
+            onCompletion(json as JSON)
         })
-        
-        print("end=\(users.count)")
-        return users
     }
+    
+    func getAllRooms(_ onCompletion: @escaping (JSON) -> Void) {
+        let route = baseURL+"/room"
+        RestConnectionManager.sharedInstance.makeHTTPGetRequest(route, onCompletion: { json, err in
+            onCompletion(json as JSON)
+        })
+    }
+
 }

@@ -10,21 +10,33 @@ import UIKit
 import SwiftyJSON
 
 class RomOvViewController: UIViewController, UITableViewDelegate {
-
+    
     // MARK: properties
     @IBOutlet weak var tableRoomOverview: UITableView!
     var arrBuilding = [Building]()
     var numberOfRooms : Int = 0
-    var users = [User]()
+    var rooms = [Room]()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
         
-        let users = RestService.sharedInstance.getAllUsers();
-        print(users.count)
-        
-        
+        RestService.sharedInstance.getAllRooms{ (json: JSON) in
+            if let results = json.array {
+                for entry in results {
+                    let entryRoom = Room(json: entry)
+                    self.rooms.append(entryRoom)
+                }
+                
+                self.tableRoomOverview.reloadData()
+                DispatchQueue.main.async {
+                    self.tableRoomOverview.reloadData()
+                }
+            } else {
+                print("error: could not parse json data")
+            }
+            print("rooms count = \(self.rooms.count)")
+        }
     }
     
     override func didReceiveMemoryWarning() {
@@ -35,16 +47,16 @@ class RomOvViewController: UIViewController, UITableViewDelegate {
     
     // MARK: table roomoverview stuff
     /*func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int{
-        
-        for building in arrBuilding{
-            numberOfRooms += building.getNumberOfRooms()
-        }
-        
-        return numberOfRooms
-    }*/
+     
+     for building in arrBuilding{
+     numberOfRooms += building.getNumberOfRooms()
+     }
+     
+     return numberOfRooms
+     }*/
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return self.users.count;
+        return self.rooms.count;
     }
     
     func tableView(_ tableView: UITableView, cellForRowAtIndexPath indexPath: IndexPath) -> UITableViewCell{
@@ -60,62 +72,10 @@ class RomOvViewController: UIViewController, UITableViewDelegate {
             cell = UITableViewCell(style: UITableViewCellStyle.value1, reuseIdentifier: "cellRoom")
         }
         
-        let user = self.users[(indexPath as NSIndexPath).row]
+        let room = self.rooms[(indexPath as NSIndexPath).row]
         
-        cell!.textLabel?.text = user.firstname
+        cell!.textLabel?.text = room.name
         return cell!
-    }
-    
-    func testREST(){
-        
-        let configuration = NSURLSessionConfiguration.defaultSessionConfiguration()
-        let session = NSURLSession(configuration: configuration)
-        
-        
-        let urlString = NSString(format: "http://localhost:8080/reserveyourroom/api/user/")
-        
-        print("get wallet balance url string is \(urlString)")
-        //let url = NSURL(string: urlString as String)
-        let request : NSMutableURLRequest = NSMutableURLRequest()
-        request.URL = NSURL(string: NSString(format: "%@", urlString) as String)
-        request.HTTPMethod = "GET"
-        request.timeoutInterval = 30
-        request.addValue("application/json", forHTTPHeaderField: "Content-Type")
-        request.addValue("application/json", forHTTPHeaderField: "Accept")
-        
-        let dataTask = session.dataTaskWithRequest(request) {
-            (let data: NSData?, let response: NSURLResponse?, let error: NSError?) -> Void in
-            
-            // 1: Check HTTP Response for successful GET request
-            guard let httpResponse = response as? NSHTTPURLResponse, receivedData = data
-                else {
-                    print("error: not a valid http response")
-                    return
-            }
-            
-            switch (httpResponse.statusCode)
-            {
-            case 200:
-                
-                let response = NSString (data: receivedData, encoding: NSUTF8StringEncoding)
-                print("response is \(response)")
-                
-                
-                do {
-                    let getResponse = try NSJSONSerialization.JSONObjectWithData(receivedData, options: .AllowFragments)
-                } catch {
-                    print("error serializing JSON: \(error)")
-                }
-                
-                break
-            case 400:
-                
-                break
-            default:
-                print("wallet GET request got response \(httpResponse.statusCode)")
-            }
-        }
-        dataTask.resume()
     }
 }
 

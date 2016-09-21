@@ -58,6 +58,4 @@ class RestConnectionManager: NSObject {
             onCompletion(nil, nil)
         }
     }
-    
-
 }

@@ -21,15 +21,6 @@ class User {
     //private let wishes : [Wish]
     //private let reservations : [Reservation]
     
-    // MARK: Initialization
-    /*init(firstname : String, lastname : String, email : String, wishes : [Wish], reservations : [Reservation]){
-        self.firstname = firstname
-        self.lastname = lastname
-        self.email = email
-        self.wishes = wishes
-        self.reservations = reservations
-    }*/
-    
     required init(json:JSON){
         uuid = json["uuid"].stringValue
         firstname = json["firstname"].stringValue
