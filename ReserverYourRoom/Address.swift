@@ -6,24 +6,25 @@
 //  Copyright © 2016 mattafix. All rights reserved.
 //
 
-struct Address{
+import SwiftyJSON
+
+class Address{
     
     // MARK: Properties
-    fileprivate let street : String
-    fileprivate let housenumber : String
-    fileprivate let zipcode : String
-    fileprivate let city : String
-    fileprivate let state : String
-    fileprivate let country : String
+    var uuid: String
+    var street : String
+    var zipcode : String
+    var city : String
+    var state: String
+    var country : String
+
     
-    
-    // MARK: Initialization
-    init(street : String, housenumber : String, city : String, zipcode : String, country : String, state : String){
-        self.street = street
-        self.housenumber = housenumber
-        self.city = city
-        self.zipcode = zipcode
-        self.country = country
-        self.state = state
+    required init(json:JSON){
+        uuid = json["uuid"].stringValue
+        street = json["street"].stringValue
+        zipcode = json["zipcode"].stringValue
+        city = json["city"].stringValue
+        state = json["state"].stringValue
+        country = json["country"].stringValue
     }
 }

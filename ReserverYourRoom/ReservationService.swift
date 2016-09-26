@@ -10,24 +10,17 @@ import Foundation
 import UIKit
 import SwiftyJSON
 
-class RestService: NSObject {
+class ReservationService: NSObject {
     
-    static let sharedInstance = RestService()
+    static let sharedInstance = ReservationService()
     
     let baseURL = "http://localhost:8080/reserveyourroom/api"
     
-    func getAllUsers(_ onCompletion: @escaping (JSON) -> Void) {
-        let route = baseURL+"/user"
+    func getAll(_ onCompletion: @escaping (JSON) -> Void) {
+        let route = baseURL+"/reservation"
         RestConnectionManager.sharedInstance.makeHTTPGetRequest(route, onCompletion: { json, err in
             onCompletion(json as JSON)
         })
     }
     
-    func getAllRooms(_ onCompletion: @escaping (JSON) -> Void) {
-        let route = baseURL+"/room"
-        RestConnectionManager.sharedInstance.makeHTTPGetRequest(route, onCompletion: { json, err in
-            onCompletion(json as JSON)
-        })
-    }
-
 }
