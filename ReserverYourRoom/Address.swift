@@ -8,7 +8,7 @@
 
 import SwiftyJSON
 
-class Address{
+class Address {
     
     // MARK: Properties
     var uuid: String
@@ -17,9 +17,8 @@ class Address{
     var city : String
     var state: String
     var country : String
-
     
-    required init(json:JSON){
+    required init(json: JSON){
         uuid = json["uuid"].stringValue
         street = json["street"].stringValue
         zipcode = json["zipcode"].stringValue

@@ -39,26 +39,85 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="x3c-UN-fm4">
-                                <frame key="frameInset" minY="64" width="163" height="30"/>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="x3c-UN-fm4">
+                                <frame key="frameInset" minX="16" minY="120" width="45" height="50"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Stadt auswählen..."/>
+                                <state key="normal" image="city"/>
                                 <connections>
-                                    <action selector="onCityClick:" destination="Rqt-6B-3MH" eventType="touchUpInside" id="YaY-R8-IUp"/>
+                                    <action selector="onClickCityFilter:" destination="Rqt-6B-3MH" eventType="touchUpInside" id="Kmc-MY-diP"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZVk-e7-7lR">
-                                <frame key="frameInset" minY="140" width="375" height="30"/>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7DX-aS-xNk">
+                                <frame key="frameInset" minX="71" minY="192" width="27" height="28"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Raum auswählen..."/>
+                                <state key="normal" title="Button" image="time"/>
+                                <connections>
+                                    <action selector="onClickStartFilter:" destination="Rqt-6B-3MH" eventType="touchUpInside" id="HcX-XZ-WWG"/>
+                                </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lXK-81-m3u">
-                                <frame key="frameInset" minY="102" width="375" height="30"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Start Time" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VxS-kr-Noy">
+                                <frame key="frameInset" minX="50" minY="211" width="87" height="44"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Gebäude auswählen..."/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Stop Time" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BFb-Cy-9ep">
+                                <frame key="frameInset" minX="227" minY="210" width="99" height="44"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tvF-qN-yK9">
+                                <frame key="frameInset" minX="254" minY="192" width="37" height="26"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Button" image="time"/>
+                                <connections>
+                                    <action selector="onClickStopFilter:" destination="Rqt-6B-3MH" eventType="touchUpInside" id="jHM-cZ-h6n"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Filters" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pki-rK-95U">
+                                <frame key="frameInset" minX="16" minY="77" width="47" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VOQ-zG-kdk">
+                                <frame key="frameInset" minX="112" minY="125" width="50" height="41"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" image="room"/>
+                                <connections>
+                                    <action selector="onClickRoomFilter:" destination="Rqt-6B-3MH" eventType="touchUpInside" id="gCp-m5-Jqs"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bAf-d5-UlV">
+                                <frame key="frameInset" minX="224" minY="129" width="37" height="37"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" image="street"/>
+                                <connections>
+                                    <action selector="onClickStreetFilter:" destination="Rqt-6B-3MH" eventType="touchUpInside" id="icg-xA-83U"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZdO-0R-WdN">
+                                <frame key="frameInset" minX="308" minY="120" width="51" height="53"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Button" image="beamer"/>
+                                <connections>
+                                    <action selector="onClickInfrastructureFilter:" destination="Rqt-6B-3MH" eventType="touchUpInside" id="PLS-93-uiZ"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="e5Y-GA-Qx2">
+                                <frame key="frameInset" minX="71" minY="72" width="32" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Button" image="filter"/>
+                                <connections>
+                                    <action selector="onClickFilter:" destination="Rqt-6B-3MH" eventType="touchUpInside" id="dgf-kL-Zqp"/>
+                                </connections>
                             </button>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="120" sectionHeaderHeight="1" sectionFooterHeight="1" translatesAutoresizingMaskIntoConstraints="NO" id="1yn-mA-soq">
-                                <frame key="frameInset" minY="216" width="375" height="451"/>
+                                <frame key="frameInset" minY="106" width="375" height="561"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <prototypes>
@@ -150,26 +209,19 @@
                                     <outlet property="delegate" destination="Rqt-6B-3MH" id="TcG-uH-PKJ"/>
                                 </connections>
                             </tableView>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PJz-EX-igL">
-                                <frame key="frameInset" minY="178" width="375" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Infrastruktur auswählen..."/>
-                            </button>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="EWl-40-SOg">
-                                <frame key="frameInset" minX="150" minY="72" width="97" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <nil key="textColor"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
-                            </textField>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     </view>
                     <navigationItem key="navigationItem" title="Raumübersicht" id="sU2-up-HHK"/>
                     <connections>
-                        <outlet property="cityBtn" destination="x3c-UN-fm4" id="W4m-yB-haI"/>
-                        <outlet property="cityTextField" destination="EWl-40-SOg" id="KvF-UM-vpD"/>
+                        <outlet property="cityFilter" destination="x3c-UN-fm4" id="FRX-kI-vjH"/>
+                        <outlet property="filterBtn" destination="e5Y-GA-Qx2" id="tvP-rW-mVI"/>
+                        <outlet property="infrastructureFilter" destination="ZdO-0R-WdN" id="lHj-K7-VBw"/>
+                        <outlet property="roomFilter" destination="VOQ-zG-kdk" id="EvR-KL-DiZ"/>
                         <outlet property="roomTable" destination="1yn-mA-soq" id="EOm-w0-eN5"/>
+                        <outlet property="startTime" destination="7DX-aS-xNk" id="Jxu-eo-41q"/>
+                        <outlet property="stopTime" destination="tvF-qN-yK9" id="sht-f3-aF7"/>
+                        <outlet property="streetFilter" destination="bAf-d5-UlV" id="pHY-3b-p2s"/>
                         <outlet property="tableRoomOverview" destination="1yn-mA-soq" id="M7f-DN-xMd"/>
                     </connections>
                 </viewController>
@@ -316,9 +368,15 @@
         </scene>
     </scenes>
     <resources>
+        <image name="beamer" width="512" height="512"/>
+        <image name="city" width="256" height="256"/>
+        <image name="filter" width="512" height="512"/>
         <image name="imageAdminReservation" width="12" height="12"/>
         <image name="imageRoomOverview" width="12" height="12"/>
         <image name="imageRoomSearch" width="12" height="12"/>
         <image name="imageSettings" width="30" height="30"/>
+        <image name="room" width="200" height="200"/>
+        <image name="street" width="200" height="175"/>
+        <image name="time" width="512" height="512"/>
     </resources>
 </document>

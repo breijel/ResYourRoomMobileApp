@@ -25,20 +25,5 @@ class RomOvRoomListViewController: UIViewController {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-    
-//    
-//    @IBAction func cancel(sender: AnyObject) {
-//        dismissViewControllerAnimated(true, completion: nil)
-//    }
-//    
-//    // MARK: Navigation
-//    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-//        
-//        //store selected rooms in room[]
-//    }
-//    
-//    @IBAction func unwindToRoomOverView(sender: UIStoryboardSegue) {
-//    }
-    
 
 }

@@ -7,14 +7,17 @@
 //
 
 import Foundation
+import SwiftyJSON
 
-struct Infrastructure {
+class Infrastructure {
     
     // MARK: Properties
-    fileprivate let name : String
+    var uuid: String
+    var name: String
     
     // MARK: Initialization
-    init(name : String){
-        self.name = name
+    required init(json: JSON){
+        uuid = json["uuid"].stringValue
+        name = json["name"].stringValue
     }
 }
