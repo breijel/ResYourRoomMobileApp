@@ -27,6 +27,8 @@ class RomOvViewController: UIViewController, UITableViewDelegate, UIPickerViewDa
     var startPicker: UIDatePicker!
     var stopPicker: UIDatePicker!
     
+    @IBOutlet weak var resultLabel: UILabel!
+    
     @IBOutlet weak var roomTable: UITableView!
     
     var arrBuilding = [Building]()
@@ -34,6 +36,8 @@ class RomOvViewController: UIViewController, UITableViewDelegate, UIPickerViewDa
     var rooms = [Room]()
     
     override func viewDidLoad() {
+        
+        resultLabel.backgroundColor = UIColor.gray
         
         initPicker()
         initStartDatePicker()

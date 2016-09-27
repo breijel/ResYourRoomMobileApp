@@ -209,14 +209,25 @@
                                     <outlet property="delegate" destination="Rqt-6B-3MH" id="TcG-uH-PKJ"/>
                                 </connections>
                             </tableView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="i36-Of-DmS">
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="71E-eh-J96" firstAttribute="top" secondItem="i36-Of-DmS" secondAttribute="bottom" id="UKS-3K-WC8"/>
+                            <constraint firstAttribute="trailing" secondItem="i36-Of-DmS" secondAttribute="trailing" id="Zcd-EB-SdA"/>
+                            <constraint firstItem="i36-Of-DmS" firstAttribute="leading" secondItem="bt6-JF-xim" secondAttribute="leading" id="cGy-Qw-Lk2"/>
+                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Raumübersicht" id="sU2-up-HHK"/>
                     <connections>
                         <outlet property="cityFilter" destination="x3c-UN-fm4" id="FRX-kI-vjH"/>
                         <outlet property="filterBtn" destination="e5Y-GA-Qx2" id="tvP-rW-mVI"/>
                         <outlet property="infrastructureFilter" destination="ZdO-0R-WdN" id="lHj-K7-VBw"/>
+                        <outlet property="resultLabel" destination="i36-Of-DmS" id="Wlv-Dg-aCZ"/>
                         <outlet property="roomFilter" destination="VOQ-zG-kdk" id="EvR-KL-DiZ"/>
                         <outlet property="roomTable" destination="1yn-mA-soq" id="EOm-w0-eN5"/>
                         <outlet property="startTime" destination="7DX-aS-xNk" id="Jxu-eo-41q"/>
