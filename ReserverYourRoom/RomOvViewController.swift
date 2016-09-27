@@ -172,22 +172,28 @@ class RomOvViewController: UIViewController, UITableViewDelegate, UIPickerViewDa
         toggleViewVisibility(self.picker)
         toggleBtn(self.cityFilter)
         
-        pickerDataSource.removeAll()
-        AddressService.sharedInstance.getAll{ (json: JSON) in
-            if let results = json.array {
-                for entry in results {
-                    let entryAddress = Address(json: entry)
-                    self.appendInPickerIfAbsent(str: entryAddress.city)
+        if(self.cityFilter.isSelected){
+            AddressService.sharedInstance.getAll{ (json: JSON) in
+                if let results = json.array {
+                    for entry in results {
+                        let entryAddress = Address(json: entry)
+                        self.appendInPickerIfAbsent(str: entryAddress.city)
+                    }
+                    
+                    DispatchQueue.main.async {
+                        self.picker.reloadAllComponents()
+                    }
+                } else {
+                    print("error: could not parse json data")
                 }
-                
-                DispatchQueue.main.async {
-                    self.picker.reloadAllComponents()
-                }
-            } else {
-                print("error: could not parse json data")
+                print("city count = \(self.pickerDataSource.count)")
             }
-            print("city count = \(self.pickerDataSource.count)")
+        } else {
+            let row: Int = self.picker.selectedRow(inComponent: 0)
+            print("City-Filter=\(self.pickerDataSource[row])")
+            pickerDataSource.removeAll()
         }
+
     }
     
     @IBAction func onClickRoomFilter(_ sender: UIButton) {
@@ -195,22 +201,28 @@ class RomOvViewController: UIViewController, UITableViewDelegate, UIPickerViewDa
         toggleViewVisibility(self.picker)
         toggleBtn(self.roomFilter)
         
-        pickerDataSource.removeAll()
-        RoomService.sharedInstance.getAll{ (json: JSON) in
-            if let results = json.array {
-                for entry in results {
-                    let entryRoom = Room(json: entry)
-                    self.appendInPickerIfAbsent(str: entryRoom.name)
+        if(self.roomFilter.isSelected){
+            RoomService.sharedInstance.getAll{ (json: JSON) in
+                if let results = json.array {
+                    for entry in results {
+                        let entryRoom = Room(json: entry)
+                        self.appendInPickerIfAbsent(str: entryRoom.name)
+                    }
+                    
+                    DispatchQueue.main.async {
+                        self.picker.reloadAllComponents()
+                    }
+                } else {
+                    print("error: could not parse json data")
                 }
-                
-                DispatchQueue.main.async {
-                    self.picker.reloadAllComponents()
-                }
-            } else {
-                print("error: could not parse json data")
+                print("room count = \(self.pickerDataSource.count)")
             }
-            print("city room = \(self.pickerDataSource.count)")
+        } else {
+            let row: Int = self.picker.selectedRow(inComponent: 0)
+            print("Room-Filer=\(self.pickerDataSource[row])")
+            pickerDataSource.removeAll()
         }
+        
     }
     
     @IBAction func onClickStreetFilter(_ sender: UIButton) {
@@ -218,44 +230,55 @@ class RomOvViewController: UIViewController, UITableViewDelegate, UIPickerViewDa
         toggleViewVisibility(self.picker)
         toggleBtn(self.streetFilter)
         
-        pickerDataSource.removeAll()
-        AddressService.sharedInstance.getAll{ (json: JSON) in
-            if let results = json.array {
-                for entry in results {
-                    let entryAddress = Address(json: entry)
-                    self.appendInPickerIfAbsent(str: entryAddress.street)
-                }
+        if(self.streetFilter.isSelected){
+            AddressService.sharedInstance.getAll{ (json: JSON) in
+                if let results = json.array {
+                    for entry in results {
+                        let entryAddress = Address(json: entry)
+                        self.appendInPickerIfAbsent(str: entryAddress.street)
+                    }
                 
-                DispatchQueue.main.async {
-                    self.picker.reloadAllComponents()
+                    DispatchQueue.main.async {
+                        self.picker.reloadAllComponents()
+                    }
+                } else {
+                    print("error: could not parse json data")
                 }
-            } else {
-                print("error: could not parse json data")
+                print("street count = \(self.pickerDataSource.count)")
             }
-            print("street count = \(self.pickerDataSource.count)")
+        } else {
+            let row: Int = self.picker.selectedRow(inComponent: 0)
+            print("Street-Filter=\(self.pickerDataSource[row])")
+            pickerDataSource.removeAll()
         }
-    }
     
+    }
+
     @IBAction func onClickInfrastructureFilter(_ sender: UIButton) {
         
         toggleViewVisibility(self.picker)
         toggleBtn(self.infrastructureFilter)
         
-        pickerDataSource.removeAll()
-        InfrastructureService.sharedInstance.getAll{ (json: JSON) in
-            if let results = json.array {
-                for entry in results {
-                    let entryInfra = Infrastructure(json: entry)
-                    self.appendInPickerIfAbsent(str: entryInfra.name)
-                }
+        if(self.infrastructureFilter.isSelected){
+            InfrastructureService.sharedInstance.getAll{ (json: JSON) in
+                if let results = json.array {
+                    for entry in results {
+                        let entryInfra = Infrastructure(json: entry)
+                        self.appendInPickerIfAbsent(str: entryInfra.name)
+                    }
                 
-                DispatchQueue.main.async {
-                    self.picker.reloadAllComponents()
+                    DispatchQueue.main.async {
+                        self.picker.reloadAllComponents()
+                    }
+                } else {
+                    print("error: could not parse json data")
                 }
-            } else {
-                print("error: could not parse json data")
+                print("Infrastructure count = \(self.pickerDataSource.count)")
             }
-            print("Infrastructure count = \(self.pickerDataSource.count)")
+        } else {
+            let row: Int = self.picker.selectedRow(inComponent: 0)
+            print("Infra-Filter=\(self.pickerDataSource[row])")
+            pickerDataSource.removeAll()
         }
     }
     
@@ -290,12 +313,26 @@ class RomOvViewController: UIViewController, UITableViewDelegate, UIPickerViewDa
         
         toggleBtn(self.startTime)
         toggleViewVisibility(self.startPicker)
+        
+        if(self.startTime.isSelected){
+            
+        } else {
+            let date: Date = self.startPicker.date
+            print("Start-Filter=\(date)")
+        }
     }
     
     @IBAction func onClickStopFilter(_ sender: UIButton) {
         
         toggleBtn(self.stopTime)
         toggleViewVisibility(self.stopPicker)
+        
+        if(self.stopPicker.isSelected){
+            
+        } else {
+            let date: Date = self.stopPicker.date
+            print("Start-Filter=\(date)")
+        }
     }
     
 }
