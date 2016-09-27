@@ -61,12 +61,14 @@ class RomOvViewController: UIViewController, UITableViewDelegate, UIPickerViewDa
                 
                 DispatchQueue.main.async {
                     self.tableRoomOverview.reloadData()
+                    self.resultLabel.text = "Found: \(self.rooms.count)"
                 }
             } else {
                 print("error: could not parse json data")
             }
             print("rooms count = \(self.rooms.count)")
         }
+        
     }
     
     func initPicker(){
@@ -270,6 +272,7 @@ class RomOvViewController: UIViewController, UITableViewDelegate, UIPickerViewDa
         if(sender.isSelected){
             sender.isSelected = false
             sender.alpha = 0.5
+            self.resultLabel.text = "Found: \(self.rooms.count)"
             
         } else {
             sender.isSelected = true
