@@ -255,6 +255,31 @@ class RomOvViewController: UIViewController, UITableViewDelegate, UIPickerViewDa
         return cell
     }
     
+    func tableView(_ tableView: UITableView, editActionsForRowAtIndexPath indexPath: NSIndexPath) -> [UITableViewRowAction]? {
+        
+        let reservation = UITableViewRowAction(style: .normal, title: "Reservation") { action, index in
+            print("Reservation button tapped")
+        }
+        reservation.backgroundColor = UIColor.blue
+        
+        let wish = UITableViewRowAction(style: .normal, title: "Wish") { action, index in
+            print("Wish button tapped")
+        }
+        wish.backgroundColor = UIColor.orange
+        
+        return [reservation, wish]
+    }
+    
+    func tableView(_ tableView: UITableView, canEditRowAtIndexPath indexPath: NSIndexPath) -> Bool {
+        // the cells you would like the actions to appear needs to be editable
+        return true
+    }
+    
+    func tableView(_ tableView: UITableView, commitEditingStyle editingStyle: UITableViewCellEditingStyle, forRowAtIndexPath indexPath: NSIndexPath) {
+        // you need to implement this method too or you can't swipe to display the actions
+    
+    }
+    
     public func numberOfComponents(in pickerView: UIPickerView) -> Int {
         return 1
     }
