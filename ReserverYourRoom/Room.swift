@@ -16,6 +16,7 @@ class Room {
     var size : Float
     var seatnumber : Int
     var name: String
+    var buildingUuid: String
     
     //private let wishes : [Wish]
     //private let reservations : [Reservation]
@@ -26,5 +27,6 @@ class Room {
         size = json["size"].floatValue
         seatnumber = json["seatnumber"].intValue
         name = json["name"].stringValue
+        buildingUuid = json["buildingId"].stringValue
     }
 }

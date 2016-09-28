@@ -19,7 +19,7 @@ class Building{
     // MARK: Initialization
     required init(json: JSON){
         self.uuid = json["uuid"].stringValue
-        self.addressUuid = json["address"].stringValue
+        self.addressUuid = json["addressId"].stringValue
         self.name = json["name"].stringValue
     }
 }

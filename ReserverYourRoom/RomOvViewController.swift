@@ -155,7 +155,6 @@ class RomOvViewController: UIViewController, UITableViewDelegate, UIPickerViewDa
     
     func fillModel(){
         if(!infraCompleted || !wishesCompleted || !addressesCompleted || !buildingsCompleted || !roomsCompleted || !reservationsCompleted){
-            print("skip")
             return
         }
         
@@ -163,7 +162,10 @@ class RomOvViewController: UIViewController, UITableViewDelegate, UIPickerViewDa
         
         for room in self.dataModel.rooms {
             
-            let roomDetail = RoomDetail(room: room)
+            let building = self.dataModel.buildings[room.buildingUuid]
+            let address = self.dataModel.addresses[(building?.addressUuid)!]
+            
+            let roomDetail = RoomDetail(room: room, address: address!, building: building!)
             self.result.append(roomDetail)
         }
         
