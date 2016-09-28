@@ -193,7 +193,7 @@ class RomOvViewController: UIViewController, UITableViewDelegate, UIPickerViewDa
         self.picker.dataSource = self
         self.picker.delegate = self
         
-        self.view.addSubview(picker)
+        self.filterView.addSubview(picker)
     }
     
     func initStartDatePicker(){
@@ -203,7 +203,6 @@ class RomOvViewController: UIViewController, UITableViewDelegate, UIPickerViewDa
         self.startPicker .datePickerMode = UIDatePickerMode.dateAndTime
         
         self.filterView.addSubview(self.startPicker)
-        //self.view.addSubview(self.startPicker )
     }
     
     
@@ -214,7 +213,6 @@ class RomOvViewController: UIViewController, UITableViewDelegate, UIPickerViewDa
         self.stopPicker.datePickerMode = UIDatePickerMode.dateAndTime
         
         self.filterView.addSubview(self.stopPicker)
-        //self.view.addSubview(self.stopPicker )
     }
     
     func initBtnStates(){
