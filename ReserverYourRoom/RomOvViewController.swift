@@ -295,7 +295,13 @@ class RomOvViewController: UIViewController, UITableViewDelegate, UIPickerViewDa
 
         } else {
             let row: Int = self.picker.selectedRow(inComponent: 0)
-            print("City-Filter=\(self.pickerDataSource[row])")
+            
+            //filter
+            result = result.filter { (roomDetail) -> Bool in
+                roomDetail.address?.city == self.pickerDataSource[row]
+            }
+            self.tableRoomOverview.reloadData()
+            
             pickerDataSource.removeAll()
         }
 
@@ -319,7 +325,13 @@ class RomOvViewController: UIViewController, UITableViewDelegate, UIPickerViewDa
             
         } else {
             let row: Int = self.picker.selectedRow(inComponent: 0)
-            print("Room-Filer=\(self.pickerDataSource[row])")
+            
+            //filter
+            result = result.filter { (roomDetail) -> Bool in
+                roomDetail.room?.name == self.pickerDataSource[row]
+            }
+            self.tableRoomOverview.reloadData()
+            
             pickerDataSource.removeAll()
         }
         
@@ -343,9 +355,16 @@ class RomOvViewController: UIViewController, UITableViewDelegate, UIPickerViewDa
             
         } else {
             let row: Int = self.picker.selectedRow(inComponent: 0)
-            print("Street-Filter=\(self.pickerDataSource[row])")
+            
+            //filter
+            result = result.filter { (roomDetail) -> Bool in
+                roomDetail.address?.street == self.pickerDataSource[row]
+            }
+            self.tableRoomOverview.reloadData()
+            
             pickerDataSource.removeAll()
         }
+
     
     }
 
@@ -368,7 +387,13 @@ class RomOvViewController: UIViewController, UITableViewDelegate, UIPickerViewDa
             
         } else {
             let row: Int = self.picker.selectedRow(inComponent: 0)
-            print("Infra-Filter=\(self.pickerDataSource[row])")
+            
+            //filter
+            result = result.filter { (roomDetail) -> Bool in
+                roomDetail.infrastructure?.name == self.pickerDataSource[row]
+            }
+            self.tableRoomOverview.reloadData()
+            
             pickerDataSource.removeAll()
         }
     }
