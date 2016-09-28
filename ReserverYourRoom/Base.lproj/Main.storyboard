@@ -229,7 +229,6 @@
                         <outlet property="infrastructureFilter" destination="ZdO-0R-WdN" id="lHj-K7-VBw"/>
                         <outlet property="resultLabel" destination="i36-Of-DmS" id="Wlv-Dg-aCZ"/>
                         <outlet property="roomFilter" destination="VOQ-zG-kdk" id="EvR-KL-DiZ"/>
-                        <outlet property="roomTable" destination="1yn-mA-soq" id="EOm-w0-eN5"/>
                         <outlet property="startTime" destination="7DX-aS-xNk" id="Jxu-eo-41q"/>
                         <outlet property="stopTime" destination="tvF-qN-yK9" id="sht-f3-aF7"/>
                         <outlet property="streetFilter" destination="bAf-d5-UlV" id="pHY-3b-p2s"/>

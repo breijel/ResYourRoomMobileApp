@@ -17,7 +17,7 @@ class WishService: NSObject {
     let baseURL = "http://localhost:8080/reserveyourroom/api"
     
     func getAll(_ onCompletion: @escaping (JSON) -> Void) {
-        let route = baseURL+"/whish"
+        let route = baseURL+"/wish"
         RestConnectionManager.sharedInstance.makeHTTPGetRequest(route, onCompletion: { json, err in
             onCompletion(json as JSON)
         })

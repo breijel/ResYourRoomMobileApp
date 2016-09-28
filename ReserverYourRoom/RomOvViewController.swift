@@ -13,62 +13,161 @@ class RomOvViewController: UIViewController, UITableViewDelegate, UIPickerViewDa
     
     // MARK: properties
     @IBOutlet weak var tableRoomOverview: UITableView!
-    
+
     @IBOutlet weak var streetFilter: UIButton!
     @IBOutlet weak var roomFilter: UIButton!
     @IBOutlet weak var cityFilter: UIButton!
     @IBOutlet weak var infrastructureFilter: UIButton!
+    
     @IBOutlet weak var filterBtn: UIButton!
+    
     @IBOutlet weak var stopTime: UIButton!
     @IBOutlet weak var startTime: UIButton!
+    
+    @IBOutlet weak var resultLabel: UILabel!
     
     var picker: UIPickerView!
     var pickerDataSource: [String] = []
     var startPicker: UIDatePicker!
     var stopPicker: UIDatePicker!
-    
-    @IBOutlet weak var resultLabel: UILabel!
-    
-    @IBOutlet weak var roomTable: UITableView!
-    
-    var arrBuilding = [Building]()
-    var numberOfRooms : Int = 0
-    var rooms = [Room]()
+    var result = [RoomDetail]()
+    var dataModel = DataModel.sharedInstance
     
     override func viewDidLoad() {
         
         resultLabel.backgroundColor = UIColor.gray
+        
+        initModel()
         
         initPicker()
         initStartDatePicker()
         initStopDatePicker()
         initBtnStates()
         
-        self.roomTable.isHidden = false
+        self.tableRoomOverview.isHidden = false
         self.picker.isHidden = true
         self.startPicker.isHidden = true
         self.stopPicker.isHidden = true
         
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
+    }
+    var roomsCompleted = false
+    var addressesCompleted = false
+    var infraCompleted = false
+    var reservationsCompleted = false
+    var wishesCompleted = false
+    var buildingsCompleted = false
+    
+    func initModel(){
         
         RoomService.sharedInstance.getAll{ (json: JSON) in
             if let results = json.array {
                 for entry in results {
                     let entryRoom = Room(json: entry)
-                    self.rooms.append(entryRoom)
+                    self.dataModel.rooms.append(entryRoom)
                 }
-                
-                DispatchQueue.main.async {
-                    self.tableRoomOverview.reloadData()
-                    self.resultLabel.text = "Found: \(self.rooms.count)"
-                }
+                self.roomsCompleted = true
+                self.fillModel()
+                print("rooms count = \(self.dataModel.rooms.count)")
             } else {
-                print("error: could not parse json data")
+                print("error: could not parse json data rooms")
+                self.roomsCompleted = true
             }
-            print("rooms count = \(self.rooms.count)")
         }
         
+        AddressService.sharedInstance.getAll{ (json: JSON) in
+            if let results = json.array {
+                for entry in results {
+                    let entryAddress = Address(json: entry)
+                    self.dataModel.addresses[entryAddress.uuid] = entryAddress
+                }
+                self.addressesCompleted = true
+                self.fillModel()
+                print("addresses count = \(self.dataModel.addresses.count)")
+            } else {
+                print("error: could not parse json data addresses")
+                self.addressesCompleted = true
+            }
+        }
+        
+        BuildingService.sharedInstance.getAll{ (json: JSON) in
+            if let results = json.array {
+                for entry in results {
+                    let entry = Building(json: entry)
+                    self.dataModel.buildings[entry.uuid] = entry
+                }
+                self.buildingsCompleted = true
+                self.fillModel()
+                print("buildings count = \(self.dataModel.buildings.count)")
+            } else {
+                print("error: could not parse json data buildings")
+                self.buildingsCompleted = true
+            }
+        }
+        
+        InfrastructureService.sharedInstance.getAll{ (json: JSON) in
+            if let results = json.array {
+                for entry in results {
+                    let entry = Infrastructure(json: entry)
+                    self.dataModel.infrastructures[entry.uuid] = entry
+                }
+                self.infraCompleted = true
+                self.fillModel()
+                print("infrastructures count = \(self.dataModel.infrastructures.count)")
+            } else {
+                print("error: could not parse json data infra")
+                self.infraCompleted = true
+            }
+        }
+        
+        ReservationService.sharedInstance.getAll{ (json: JSON) in
+            if let results = json.array {
+                for entry in results {
+                    let entry = Reservation(json: entry)
+                    self.dataModel.reservations[entry.uuid] = entry
+                }
+                self.reservationsCompleted = true
+                self.fillModel()
+                print("reservations count = \(self.dataModel.reservations.count)")
+            } else {
+                print("error: could not parse json data reservation")
+                self.reservationsCompleted = true
+            }
+        }
+        
+        WishService.sharedInstance.getAll{ (json: JSON) in
+            if let results = json.array {
+                for entry in results {
+                    let entry = Wish(json: entry)
+                    self.dataModel.wishes[entry.uuid] = entry
+                }
+                self.wishesCompleted = true
+                self.fillModel()
+                print("wishes count = \(self.dataModel.wishes.count)")
+            } else {
+                print("error: could not parse json data wish")
+                self.wishesCompleted = true
+            }
+        }
+
+    }
+    
+    func fillModel(){
+        if(!infraCompleted || !wishesCompleted || !addressesCompleted || !buildingsCompleted || !roomsCompleted || !reservationsCompleted){
+            print("skip")
+            return
+        }
+        
+        print("Filling model")
+        
+        for room in self.dataModel.rooms {
+            
+            let roomDetail = RoomDetail(room: room)
+            self.result.append(roomDetail)
+        }
+        
+        print("model count = \(result.count)")
     }
     
     func initPicker(){
@@ -126,16 +225,16 @@ class RomOvViewController: UIViewController, UITableViewDelegate, UIPickerViewDa
     
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return self.rooms.count;
+        return self.result.count;
     }
     
     func tableView(_ tableView: UITableView, cellForRowAtIndexPath indexPath: IndexPath) -> UITableViewCell{
         
         let cell = tableView.dequeueReusableCell(withIdentifier: "cellRoom") as! TableViewCell
         
-        let room = self.rooms[(indexPath as NSIndexPath).row]
+        let roomDetail = self.result[(indexPath as NSIndexPath).row]
 
-        cell.roomname.text = room.name
+        cell.roomname.text = roomDetail.room?.name
         
         return cell
     }
@@ -295,7 +394,7 @@ class RomOvViewController: UIViewController, UITableViewDelegate, UIPickerViewDa
         if(sender.isSelected){
             sender.isSelected = false
             sender.alpha = 0.5
-            self.resultLabel.text = "Found: \(self.rooms.count)"
+            self.resultLabel.text = "Found: \(self.result.count)"
             
         } else {
             sender.isSelected = true

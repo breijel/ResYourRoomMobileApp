@@ -7,22 +7,19 @@
 //
 
 import Foundation
+import SwiftyJSON
 
 class Building{
     
     // MARK: Properties
-    fileprivate let address : Address
-    fileprivate let rooms : [Room]
-    fileprivate let name : String
+    var uuid: String
+    var addressUuid : String
+    var name : String
     
     // MARK: Initialization
-    init(name : String, address : Address, rooms : [Room]){
-        self.address = address
-        self.rooms = rooms
-        self.name = name
-    }
-    
-    func getNumberOfRooms() -> Int {
-        return self.rooms.count
+    required init(json: JSON){
+        self.uuid = json["uuid"].stringValue
+        self.addressUuid = json["address"].stringValue
+        self.name = json["name"].stringValue
     }
 }

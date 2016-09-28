@@ -7,24 +7,23 @@
 //
 
 import Foundation
+import SwiftyJSON
 
-struct Wish {
+class Wish {
     
     // MARK: Properties
-    fileprivate let start : Date
-    fileprivate let end : Date
-    fileprivate let infrastructure : [Infrastructure]
-    fileprivate let address : Address
-    fileprivate let building : Building
-    fileprivate let room : Room
+    var uuid: String
+    //var start : String
+    //var end : String
+    //var roomUuid : String
+    //var userUuid : String
     
     // MARK: Initialization
-    init(start : Date, end : Date, infrastructure : [Infrastructure], address : Address, building : Building, room : Room){
-        self.start = start
-        self.end = end
-        self.infrastructure = infrastructure
-        self.address = address
-        self.building = building
-        self.room = room
+    required init(json: JSON){
+        self.uuid = json["uuid"].stringValue
+        /*self.start = json["start"].stringValue
+        self.end = json["end"].stringValue
+        self.roomUuid = json["roomId"].stringValue
+        self.userUuid = json["userId"].stringValue*/
     }
 }

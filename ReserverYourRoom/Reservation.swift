@@ -7,18 +7,22 @@
 //
 
 import Foundation
+import SwiftyJSON
 
-struct Reservation {
+class Reservation {
     
     // MARK: Properties
-    fileprivate let start : Date
-    fileprivate let end : Date
-    fileprivate let room : Room
+    var uuid: String
+    var start : String
+    var end : String
+    var roomUuid : String
     
     // MARK: Initialization
-    init(room : Room, start : Date, end : Date){
-        self.room = room
-        self.start = start
-        self.end = end
+    required init(json: JSON){
+        self.uuid = json["uuid"].stringValue
+        self.roomUuid = json["room"].stringValue
+        self.start = json["start"].stringValue
+        self.end = json["end"].stringValue
+
     }
 }

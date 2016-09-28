@@ -31,6 +31,8 @@
 		F096445F1D999D860024F00A /* WishService.swift in Sources */ = {isa = PBXBuildFile; fileRef = F096445E1D999D860024F00A /* WishService.swift */; };
 		F09644611D99AC8A0024F00A /* TableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F09644601D99AC8A0024F00A /* TableViewCell.swift */; };
 		F09644631D99B0EF0024F00A /* ReservationViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F09644621D99B0EF0024F00A /* ReservationViewCell.swift */; };
+		F09644661D9AC26C0024F00A /* RoomDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = F09644651D9AC26C0024F00A /* RoomDetail.swift */; };
+		F09644691D9B98F60024F00A /* DataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F09644681D9B98F60024F00A /* DataModel.swift */; };
 		F09BD65F1D87EEFB005E10EE /* RestConnectionManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = F09BD65E1D87EEFB005E10EE /* RestConnectionManager.swift */; };
 /* End PBXBuildFile section */
 
@@ -68,6 +70,8 @@
 		F096445E1D999D860024F00A /* WishService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WishService.swift; sourceTree = "<group>"; };
 		F09644601D99AC8A0024F00A /* TableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TableViewCell.swift; sourceTree = "<group>"; };
 		F09644621D99B0EF0024F00A /* ReservationViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReservationViewCell.swift; sourceTree = "<group>"; };
+		F09644651D9AC26C0024F00A /* RoomDetail.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RoomDetail.swift; sourceTree = "<group>"; };
+		F09644681D9B98F60024F00A /* DataModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataModel.swift; sourceTree = "<group>"; };
 		F09BD65E1D87EEFB005E10EE /* RestConnectionManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RestConnectionManager.swift; sourceTree = "<group>"; };
 		FE5BF882845C5C4BBA9981DD /* Pods_ReserverYourRoom.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ReserverYourRoom.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -133,6 +137,7 @@
 		795800CC1D5A308C0001E06A /* ReserverYourRoom */ = {
 			isa = PBXGroup;
 			children = (
+				F09644671D9AC5820024F00A /* Model */,
 				F09BD65D1D87EEE8005E10EE /* RESTClient */,
 				794E6B281D6394CF00F877CC /* Views */,
 				79F68E0D1D5E56620067BDA8 /* DataModel */,
@@ -180,6 +185,15 @@
 				24CE7D5D62CA25645FF5C8CC /* Pods-ReserverYourRoomUITests.release.xcconfig */,
 			);
 			name = Pods;
+			sourceTree = "<group>";
+		};
+		F09644671D9AC5820024F00A /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				F09644651D9AC26C0024F00A /* RoomDetail.swift */,
+				F09644681D9B98F60024F00A /* DataModel.swift */,
+			);
+			name = Model;
 			sourceTree = "<group>";
 		};
 		F09BD65D1D87EEE8005E10EE /* RESTClient */ = {
@@ -326,6 +340,7 @@
 				794E6B241D6393DD00F877CC /* RomOvRoomListViewController.swift in Sources */,
 				F080AF2A1D915B8200B73971 /* RoomService.swift in Sources */,
 				79866A531D60D700002787F5 /* Reservation.swift in Sources */,
+				F09644661D9AC26C0024F00A /* RoomDetail.swift in Sources */,
 				795800CE1D5A308C0001E06A /* AppDelegate.swift in Sources */,
 				F09644591D999D510024F00A /* AddressService.swift in Sources */,
 				F09BD65F1D87EEFB005E10EE /* RestConnectionManager.swift in Sources */,
@@ -342,6 +357,7 @@
 				79F68E0F1D5E56E00067BDA8 /* Room.swift in Sources */,
 				79866A561D60D9F7002787F5 /* User.swift in Sources */,
 				F09644571D999D460024F00A /* BuildingService.swift in Sources */,
+				F09644691D9B98F60024F00A /* DataModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
