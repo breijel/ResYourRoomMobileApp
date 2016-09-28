@@ -13,6 +13,7 @@ class RomOvViewController: UIViewController, UITableViewDelegate, UIPickerViewDa
     
     // MARK: properties
     @IBOutlet weak var tableRoomOverview: UITableView!
+    @IBOutlet weak var filterView: UIView!
 
     @IBOutlet weak var streetFilter: UIButton!
     @IBOutlet weak var roomFilter: UIButton!
@@ -55,6 +56,7 @@ class RomOvViewController: UIViewController, UITableViewDelegate, UIPickerViewDa
         self.picker.isHidden = true
         self.startPicker.isHidden = true
         self.stopPicker.isHidden = true
+        self.filterView.isHidden = true
         
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
@@ -200,7 +202,8 @@ class RomOvViewController: UIViewController, UITableViewDelegate, UIPickerViewDa
         self.startPicker .backgroundColor = UIColor.gray
         self.startPicker .datePickerMode = UIDatePickerMode.dateAndTime
         
-        self.view.addSubview(self.startPicker )
+        self.filterView.addSubview(self.startPicker)
+        //self.view.addSubview(self.startPicker )
     }
     
     
@@ -210,7 +213,8 @@ class RomOvViewController: UIViewController, UITableViewDelegate, UIPickerViewDa
         self.stopPicker.backgroundColor = UIColor.gray
         self.stopPicker.datePickerMode = UIDatePickerMode.dateAndTime
         
-        self.view.addSubview(self.stopPicker )
+        self.filterView.addSubview(self.stopPicker)
+        //self.view.addSubview(self.stopPicker )
     }
     
     func initBtnStates(){
@@ -452,6 +456,7 @@ class RomOvViewController: UIViewController, UITableViewDelegate, UIPickerViewDa
     @IBAction func onClickFilter(_ sender: UIButton) {
         
         toggleBtn(self.filterBtn)
+        toggleViewVisibility(self.filterView)
         toggleViewVisibility(self.tableRoomOverview)
     }
     
