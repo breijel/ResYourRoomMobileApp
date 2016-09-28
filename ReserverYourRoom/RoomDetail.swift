@@ -12,17 +12,12 @@ class RoomDetail {
     
     var room: Room?
     var infrastructure: Infrastructure?
-    var reservation: Reservation?
-    var wish: Wish?
     var building: Building?
     var address: Address?
     
-    required init(room: Room, address: Address, building: Building){
-        //, infrastructure: Infrastructure, reservation: Reservation, wish: Wish, ){
+    required init(room: Room, address: Address, building: Building, infrastructure: Infrastructure){
         self.room = room
-        //self.infrastructure = infrastructure
-        //self.reservation = reservation
-        //self.wish = wish
+        self.infrastructure = infrastructure
         self.building = building
         self.address = address
     }

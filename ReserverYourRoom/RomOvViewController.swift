@@ -33,6 +33,13 @@ class RomOvViewController: UIViewController, UITableViewDelegate, UIPickerViewDa
     var result = [RoomDetail]()
     var dataModel = DataModel.sharedInstance
     
+    var roomsCompleted = false
+    var addressesCompleted = false
+    var infraCompleted = false
+    var reservationsCompleted = false
+    var wishesCompleted = false
+    var buildingsCompleted = false
+    
     override func viewDidLoad() {
         
         resultLabel.backgroundColor = UIColor.gray
@@ -52,12 +59,6 @@ class RomOvViewController: UIViewController, UITableViewDelegate, UIPickerViewDa
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
     }
-    var roomsCompleted = false
-    var addressesCompleted = false
-    var infraCompleted = false
-    var reservationsCompleted = false
-    var wishesCompleted = false
-    var buildingsCompleted = false
     
     func initModel(){
         
@@ -110,7 +111,7 @@ class RomOvViewController: UIViewController, UITableViewDelegate, UIPickerViewDa
             if let results = json.array {
                 for entry in results {
                     let entry = Infrastructure(json: entry)
-                    self.dataModel.infrastructures[entry.uuid] = entry
+                    self.dataModel.infrastructures[entry.roomUuid] = entry
                 }
                 self.infraCompleted = true
                 self.fillModel()
@@ -164,12 +165,17 @@ class RomOvViewController: UIViewController, UITableViewDelegate, UIPickerViewDa
             
             let building = self.dataModel.buildings[room.buildingUuid]
             let address = self.dataModel.addresses[(building?.addressUuid)!]
+            let infra = self.dataModel.infrastructures[room.uuid]
             
-            let roomDetail = RoomDetail(room: room, address: address!, building: building!)
+            let roomDetail = RoomDetail(room: room, address: address!, building: building!, infrastructure: infra!)
             self.result.append(roomDetail)
         }
         
-        print("model count = \(result.count)")
+        DispatchQueue.main.async {
+            self.tableRoomOverview.reloadData()
+        }
+        
+        print("result count = \(result.count)")
     }
     
     func initPicker(){
@@ -237,6 +243,9 @@ class RomOvViewController: UIViewController, UITableViewDelegate, UIPickerViewDa
         let roomDetail = self.result[(indexPath as NSIndexPath).row]
 
         cell.roomname.text = roomDetail.room?.name
+        cell.location.text = roomDetail.address?.city
+        cell.infrastructure.text = roomDetail.infrastructure?.name
+        cell.address.text = roomDetail.address?.street
         
         return cell
     }

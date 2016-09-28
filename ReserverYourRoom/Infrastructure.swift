@@ -14,10 +14,12 @@ class Infrastructure {
     // MARK: Properties
     var uuid: String
     var name: String
+    var roomUuid: String
     
     // MARK: Initialization
     required init(json: JSON){
         uuid = json["uuid"].stringValue
         name = json["name"].stringValue
+        roomUuid = json["roomId"].stringValue
     }
 }
