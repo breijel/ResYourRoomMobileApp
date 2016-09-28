@@ -214,6 +214,14 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="m1F-kL-pZg">
+                                <frame key="frameInset" minX="328" minY="64" width="47" height="45"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Button" image="reload"/>
+                                <connections>
+                                    <action selector="onClickReload:" destination="Rqt-6B-3MH" eventType="touchUpInside" id="Dq8-YY-EYC"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
@@ -385,6 +393,7 @@
         <image name="imageRoomOverview" width="12" height="12"/>
         <image name="imageRoomSearch" width="12" height="12"/>
         <image name="imageSettings" width="30" height="30"/>
+        <image name="reload" width="256" height="256"/>
         <image name="room" width="200" height="200"/>
         <image name="street" width="200" height="175"/>
         <image name="time" width="512" height="512"/>

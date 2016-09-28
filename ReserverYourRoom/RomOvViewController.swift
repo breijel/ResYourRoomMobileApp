@@ -62,6 +62,13 @@ class RomOvViewController: UIViewController, UITableViewDelegate, UIPickerViewDa
     
     func initModel(){
         
+        roomsCompleted = false
+        addressesCompleted = false
+        infraCompleted = false
+        reservationsCompleted = false
+        wishesCompleted = false
+        buildingsCompleted = false
+        
         RoomService.sharedInstance.getAll{ (json: JSON) in
             if let results = json.array {
                 for entry in results {
@@ -159,8 +166,6 @@ class RomOvViewController: UIViewController, UITableViewDelegate, UIPickerViewDa
             return
         }
         
-        print("Filling model")
-        
         for room in self.dataModel.rooms {
             
             let building = self.dataModel.buildings[room.buildingUuid]
@@ -173,9 +178,9 @@ class RomOvViewController: UIViewController, UITableViewDelegate, UIPickerViewDa
         
         DispatchQueue.main.async {
             self.tableRoomOverview.reloadData()
+            self.resultLabel.text = "Found: \(self.result.count)"
         }
         
-        print("result count = \(result.count)")
     }
     
     func initPicker(){
@@ -449,6 +454,20 @@ class RomOvViewController: UIViewController, UITableViewDelegate, UIPickerViewDa
             let date: Date = self.stopPicker.date
             print("Start-Filter=\(date)")
         }
+    }
+    
+    @IBAction func onClickReload(_ sender: UIButton) {
+        
+        dataModel.addresses.removeAll()
+        dataModel.buildings.removeAll()
+        dataModel.infrastructures.removeAll()
+        dataModel.reservations.removeAll()
+        dataModel.rooms.removeAll()
+        dataModel.wishes.removeAll()
+        
+        result.removeAll()
+        
+        self.initModel()
     }
     
 }
