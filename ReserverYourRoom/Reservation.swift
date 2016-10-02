@@ -20,7 +20,7 @@ class Reservation {
     // MARK: Initialization
     required init(json: JSON){
         self.uuid = json["uuid"].stringValue
-        self.roomUuid = json["room"].stringValue
+        self.roomUuid = json["roomId"].stringValue
         self.start = json["start"].stringValue
         self.end = json["end"].stringValue
 

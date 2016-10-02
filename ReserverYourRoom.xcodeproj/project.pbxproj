@@ -30,9 +30,11 @@
 		F096445D1D999D740024F00A /* ReservationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = F096445C1D999D740024F00A /* ReservationService.swift */; };
 		F096445F1D999D860024F00A /* WishService.swift in Sources */ = {isa = PBXBuildFile; fileRef = F096445E1D999D860024F00A /* WishService.swift */; };
 		F09644611D99AC8A0024F00A /* TableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F09644601D99AC8A0024F00A /* TableViewCell.swift */; };
-		F09644631D99B0EF0024F00A /* ReservationViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F09644621D99B0EF0024F00A /* ReservationViewCell.swift */; };
+		F09644631D99B0EF0024F00A /* RoomViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F09644621D99B0EF0024F00A /* RoomViewCell.swift */; };
 		F09644661D9AC26C0024F00A /* RoomDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = F09644651D9AC26C0024F00A /* RoomDetail.swift */; };
 		F09644691D9B98F60024F00A /* DataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F09644681D9B98F60024F00A /* DataModel.swift */; };
+		F096446B1D9CE3A90024F00A /* ReservationCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F096446A1D9CE3A90024F00A /* ReservationCell.swift */; };
+		F096446D1DA12FC80024F00A /* WishCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F096446C1DA12FC80024F00A /* WishCell.swift */; };
 		F09BD65F1D87EEFB005E10EE /* RestConnectionManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = F09BD65E1D87EEFB005E10EE /* RestConnectionManager.swift */; };
 /* End PBXBuildFile section */
 
@@ -69,9 +71,11 @@
 		F096445C1D999D740024F00A /* ReservationService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReservationService.swift; sourceTree = "<group>"; };
 		F096445E1D999D860024F00A /* WishService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WishService.swift; sourceTree = "<group>"; };
 		F09644601D99AC8A0024F00A /* TableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TableViewCell.swift; sourceTree = "<group>"; };
-		F09644621D99B0EF0024F00A /* ReservationViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReservationViewCell.swift; sourceTree = "<group>"; };
+		F09644621D99B0EF0024F00A /* RoomViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RoomViewCell.swift; sourceTree = "<group>"; };
 		F09644651D9AC26C0024F00A /* RoomDetail.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RoomDetail.swift; sourceTree = "<group>"; };
 		F09644681D9B98F60024F00A /* DataModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataModel.swift; sourceTree = "<group>"; };
+		F096446A1D9CE3A90024F00A /* ReservationCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReservationCell.swift; sourceTree = "<group>"; };
+		F096446C1DA12FC80024F00A /* WishCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WishCell.swift; sourceTree = "<group>"; };
 		F09BD65E1D87EEFB005E10EE /* RestConnectionManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RestConnectionManager.swift; sourceTree = "<group>"; };
 		FE5BF882845C5C4BBA9981DD /* Pods_ReserverYourRoom.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ReserverYourRoom.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -91,6 +95,7 @@
 		794E6B271D63940C00F877CC /* RoomOverview */ = {
 			isa = PBXGroup;
 			children = (
+				F09644621D99B0EF0024F00A /* RoomViewCell.swift */,
 				795800CF1D5A308C0001E06A /* RomOvViewController.swift */,
 				794E6B231D6393DD00F877CC /* RomOvRoomListViewController.swift */,
 				F09644601D99AC8A0024F00A /* TableViewCell.swift */,
@@ -111,7 +116,8 @@
 			isa = PBXGroup;
 			children = (
 				795800FD1D5A3DFF0001E06A /* ResOvViewController.swift */,
-				F09644621D99B0EF0024F00A /* ReservationViewCell.swift */,
+				F096446A1D9CE3A90024F00A /* ReservationCell.swift */,
+				F096446C1DA12FC80024F00A /* WishCell.swift */,
 			);
 			name = ReservationOverview;
 			sourceTree = "<group>";
@@ -336,7 +342,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				F096445D1D999D740024F00A /* ReservationService.swift in Sources */,
-				F09644631D99B0EF0024F00A /* ReservationViewCell.swift in Sources */,
+				F09644631D99B0EF0024F00A /* RoomViewCell.swift in Sources */,
 				794E6B241D6393DD00F877CC /* RomOvRoomListViewController.swift in Sources */,
 				F080AF2A1D915B8200B73971 /* RoomService.swift in Sources */,
 				79866A531D60D700002787F5 /* Reservation.swift in Sources */,
@@ -353,8 +359,10 @@
 				79F68E131D5E5D460067BDA8 /* Address.swift in Sources */,
 				F09644551D999D000024F00A /* UserService.swift in Sources */,
 				795800D01D5A308C0001E06A /* RomOvViewController.swift in Sources */,
+				F096446B1D9CE3A90024F00A /* ReservationCell.swift in Sources */,
 				F096445F1D999D860024F00A /* WishService.swift in Sources */,
 				79F68E0F1D5E56E00067BDA8 /* Room.swift in Sources */,
+				F096446D1DA12FC80024F00A /* WishCell.swift in Sources */,
 				79866A561D60D9F7002787F5 /* User.swift in Sources */,
 				F09644571D999D460024F00A /* BuildingService.swift in Sources */,
 				F09644691D9B98F60024F00A /* DataModel.swift in Sources */,
