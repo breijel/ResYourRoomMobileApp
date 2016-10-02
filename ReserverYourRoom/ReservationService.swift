@@ -23,4 +23,12 @@ class ReservationService: NSObject {
         })
     }
     
+    func removeReservation(_ onCompletion: @escaping (JSON) -> Void, reservation: Reservation) {
+        let dictionary = [String: AnyObject]()
+        let route = baseURL+"/reservation/"+reservation.uuid
+        RestConnectionManager.sharedInstance.makeHTTPPostRequest(route, body: dictionary, onCompletion: { json, err in
+            onCompletion(json as JSON)
+        })
+    }
+    
 }

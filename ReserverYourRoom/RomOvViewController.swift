@@ -9,7 +9,7 @@
 import UIKit
 import SwiftyJSON
 
-class RomOvViewController: UIViewController, UITableViewDelegate, UIPickerViewDataSource, UIPickerViewDelegate {
+class RomOvViewController: UIViewController, UIPickerViewDataSource, UIPickerViewDelegate {
     
     // MARK: properties
     @IBOutlet weak var tableRoomOverview: UITableView!
@@ -31,8 +31,9 @@ class RomOvViewController: UIViewController, UITableViewDelegate, UIPickerViewDa
     var pickerDataSource: [String] = []
     var startPicker: UIDatePicker!
     var stopPicker: UIDatePicker!
-    var result = [RoomDetail]()
     var dataModel = DataModel.sharedInstance
+    
+    let roomTableViewDelegateAndDS = RoomTableDelegateDataSource()
     
     var roomsCompleted = false
     var addressesCompleted = false
@@ -42,6 +43,9 @@ class RomOvViewController: UIViewController, UITableViewDelegate, UIPickerViewDa
     var buildingsCompleted = false
     
     override func viewDidLoad() {
+        
+        tableRoomOverview.dataSource = roomTableViewDelegateAndDS
+        tableRoomOverview.delegate = roomTableViewDelegateAndDS
         
         resultLabel.backgroundColor = UIColor.gray
         
@@ -175,12 +179,12 @@ class RomOvViewController: UIViewController, UITableViewDelegate, UIPickerViewDa
             let infra = self.dataModel.infrastructures[room.uuid]
             
             let roomDetail = RoomDetail(room: room, address: address!, building: building!, infrastructure: infra!)
-            self.result.append(roomDetail)
+            self.roomTableViewDelegateAndDS.result.append(roomDetail)
         }
         
         DispatchQueue.main.async {
             self.tableRoomOverview.reloadData()
-            self.resultLabel.text = "Found: \(self.result.count)"
+            self.resultLabel.text = "Found: \(self.roomTableViewDelegateAndDS.result.count)"
         }
         
     }
@@ -239,59 +243,16 @@ class RomOvViewController: UIViewController, UITableViewDelegate, UIPickerViewDa
     }
     
     
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return self.result.count;
-    }
-    
-    func tableView(_ tableView: UITableView, cellForRowAtIndexPath indexPath: IndexPath) -> UITableViewCell{
-        
-        let cell = tableView.dequeueReusableCell(withIdentifier: "cellRoom") as! TableViewCell
-        
-        let roomDetail = self.result[(indexPath as NSIndexPath).row]
-
-        cell.roomname.text = roomDetail.room?.name
-        cell.location.text = roomDetail.address?.city
-        cell.infrastructure.text = roomDetail.infrastructure?.name
-        cell.address.text = roomDetail.address?.street
-        
-        return cell
-    }
-    
-    func tableView(_ tableView: UITableView, editActionsForRowAtIndexPath indexPath: NSIndexPath) -> [UITableViewRowAction]? {
-        
-        let reservation = UITableViewRowAction(style: .normal, title: "Reservation") { action, index in
-            print("Reservation button tapped")
-        }
-        reservation.backgroundColor = UIColor.blue
-        
-        let wish = UITableViewRowAction(style: .normal, title: "Wish") { action, index in
-            print("Wish button tapped")
-        }
-        wish.backgroundColor = UIColor.orange
-        
-        return [reservation, wish]
-    }
-    
-    func tableView(_ tableView: UITableView, canEditRowAtIndexPath indexPath: NSIndexPath) -> Bool {
-        // the cells you would like the actions to appear needs to be editable
-        return true
-    }
-    
-    func tableView(_ tableView: UITableView, commitEditingStyle editingStyle: UITableViewCellEditingStyle, forRowAtIndexPath indexPath: NSIndexPath) {
-        // you need to implement this method too or you can't swipe to display the actions
-    
-    }
-    
-    public func numberOfComponents(in pickerView: UIPickerView) -> Int {
-        return 1
-    }
-    
     func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
         return pickerDataSource.count
     }
     
     func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
         return pickerDataSource[row]
+    }
+    
+    public func numberOfComponents(in pickerView: UIPickerView) -> Int {
+        return 1
     }
     
     func donePicker(_ sender: AnyObject){
@@ -329,7 +290,7 @@ class RomOvViewController: UIViewController, UITableViewDelegate, UIPickerViewDa
             let row: Int = self.picker.selectedRow(inComponent: 0)
             
             //filter
-            result = result.filter { (roomDetail) -> Bool in
+            self.roomTableViewDelegateAndDS.result = self.roomTableViewDelegateAndDS.result.filter { (roomDetail) -> Bool in
                 roomDetail.address?.city == self.pickerDataSource[row]
             }
             self.tableRoomOverview.reloadData()
@@ -359,7 +320,7 @@ class RomOvViewController: UIViewController, UITableViewDelegate, UIPickerViewDa
             let row: Int = self.picker.selectedRow(inComponent: 0)
             
             //filter
-            result = result.filter { (roomDetail) -> Bool in
+            self.roomTableViewDelegateAndDS.result = self.roomTableViewDelegateAndDS.result.filter { (roomDetail) -> Bool in
                 roomDetail.room?.name == self.pickerDataSource[row]
             }
             self.tableRoomOverview.reloadData()
@@ -389,7 +350,7 @@ class RomOvViewController: UIViewController, UITableViewDelegate, UIPickerViewDa
             let row: Int = self.picker.selectedRow(inComponent: 0)
             
             //filter
-            result = result.filter { (roomDetail) -> Bool in
+            self.roomTableViewDelegateAndDS.result = self.roomTableViewDelegateAndDS.result.filter { (roomDetail) -> Bool in
                 roomDetail.address?.street == self.pickerDataSource[row]
             }
             self.tableRoomOverview.reloadData()
@@ -421,7 +382,7 @@ class RomOvViewController: UIViewController, UITableViewDelegate, UIPickerViewDa
             let row: Int = self.picker.selectedRow(inComponent: 0)
             
             //filter
-            result = result.filter { (roomDetail) -> Bool in
+            self.roomTableViewDelegateAndDS.result = self.roomTableViewDelegateAndDS.result.filter { (roomDetail) -> Bool in
                 roomDetail.infrastructure?.name == self.pickerDataSource[row]
             }
             self.tableRoomOverview.reloadData()
@@ -443,7 +404,7 @@ class RomOvViewController: UIViewController, UITableViewDelegate, UIPickerViewDa
         if(sender.isSelected){
             sender.isSelected = false
             sender.alpha = 0.5
-            self.resultLabel.text = "Found: \(self.result.count)"
+            self.resultLabel.text = "Found: \(self.roomTableViewDelegateAndDS.result.count)"
             
         } else {
             sender.isSelected = true
@@ -493,7 +454,7 @@ class RomOvViewController: UIViewController, UITableViewDelegate, UIPickerViewDa
         dataModel.rooms.removeAll()
         dataModel.wishes.removeAll()
         
-        result.removeAll()
+        self.roomTableViewDelegateAndDS.result.removeAll()
         
         self.initModel()
     }

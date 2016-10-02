@@ -19,7 +19,7 @@ class ReservationTableDelegateDataSource : NSObject, UITableViewDelegate, UITabl
     
     // Delegate
     
-    private func tableView(_ tableView: UITableView, editActionsForRowAtIndexPath indexPath: NSIndexPath) -> [UITableViewRowAction]? {
+    func tableView(_ tableView: UITableView, editActionsForRowAtIndexPath indexPath: NSIndexPath) -> [UITableViewRowAction]? {
         
         let deleteAction = UITableViewRowAction(style: .normal, title: "Abmelden") { action, index in
             print("Abmelden reservation button tapped")
@@ -39,12 +39,12 @@ class ReservationTableDelegateDataSource : NSObject, UITableViewDelegate, UITabl
         return [deleteAction]
     }
     
-    private func tableView(_ tableView: UITableView, canEditRowAtIndexPath indexPath: NSIndexPath) -> Bool {
+    func tableView(_ tableView: UITableView, canEditRowAtIndexPath indexPath: NSIndexPath) -> Bool {
         // the cells you would like the actions to appear needs to be editable
         return true
     }
     
-    private func tableView(_ tableView: UITableView, commitEditingStyle editingStyle: UITableViewCellEditingStyle, forRowAtIndexPath indexPath: NSIndexPath) {
+    func tableView(_ tableView: UITableView, commitEditingStyle editingStyle: UITableViewCellEditingStyle, forRowAtIndexPath indexPath: NSIndexPath) {
         // you need to implement this method too or you can't swipe to display the actions
         
     }

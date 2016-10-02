@@ -10,7 +10,7 @@ import Foundation
 import Foundation
 import UIKit
 
-class ReservationViewCell: UITableViewCell {
+class RoomViewCell: UITableViewCell {
     
     @IBOutlet weak var infrastructure: UILabel!
     @IBOutlet weak var address: UILabel!

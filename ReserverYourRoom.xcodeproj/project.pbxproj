@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		794E6B241D6393DD00F877CC /* RomOvRoomListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 794E6B231D6393DD00F877CC /* RomOvRoomListViewController.swift */; };
 		795800CE1D5A308C0001E06A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 795800CD1D5A308C0001E06A /* AppDelegate.swift */; };
 		795800D01D5A308C0001E06A /* RomOvViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 795800CF1D5A308C0001E06A /* RomOvViewController.swift */; };
 		795800D51D5A308C0001E06A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 795800D31D5A308C0001E06A /* Main.storyboard */; };
@@ -22,6 +21,7 @@
 		79F68E131D5E5D460067BDA8 /* Address.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79F68E121D5E5D460067BDA8 /* Address.swift */; };
 		79F68E151D5E5E7D0067BDA8 /* Building.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79F68E141D5E5E7D0067BDA8 /* Building.swift */; };
 		A980E104BFD5CD895467A625 /* Pods_ReserverYourRoom.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FE5BF882845C5C4BBA9981DD /* Pods_ReserverYourRoom.framework */; };
+		F01575981DA1642F00F87FA4 /* RoomTableViewDelegateAndDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = F01575971DA1642F00F87FA4 /* RoomTableViewDelegateAndDataSource.swift */; };
 		F080AF2A1D915B8200B73971 /* RoomService.swift in Sources */ = {isa = PBXBuildFile; fileRef = F080AF291D915B8200B73971 /* RoomService.swift */; };
 		F09644551D999D000024F00A /* UserService.swift in Sources */ = {isa = PBXBuildFile; fileRef = F09644541D999D000024F00A /* UserService.swift */; };
 		F09644571D999D460024F00A /* BuildingService.swift in Sources */ = {isa = PBXBuildFile; fileRef = F09644561D999D460024F00A /* BuildingService.swift */; };
@@ -47,7 +47,6 @@
 		3278A4C56F2AAB28882BA18C /* Pods-ReserverYourRoomTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ReserverYourRoomTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ReserverYourRoomTests/Pods-ReserverYourRoomTests.debug.xcconfig"; sourceTree = "<group>"; };
 		4EFCDAEFBC6284C732984460 /* Pods-ReserverYourRoom.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ReserverYourRoom.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ReserverYourRoom/Pods-ReserverYourRoom.debug.xcconfig"; sourceTree = "<group>"; };
 		734F11E291F986860C22642F /* Pods_ReserverYourRoomTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ReserverYourRoomTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		794E6B231D6393DD00F877CC /* RomOvRoomListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RomOvRoomListViewController.swift; sourceTree = "<group>"; };
 		795800CA1D5A308C0001E06A /* ReserverYourRoom.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ReserverYourRoom.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		795800CD1D5A308C0001E06A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		795800CF1D5A308C0001E06A /* RomOvViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RomOvViewController.swift; sourceTree = "<group>"; };
@@ -65,6 +64,7 @@
 		79F68E141D5E5E7D0067BDA8 /* Building.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Building.swift; sourceTree = "<group>"; };
 		7C23B934C45FD4CB3B46EEC2 /* Pods-ReserverYourRoom.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ReserverYourRoom.release.xcconfig"; path = "Pods/Target Support Files/Pods-ReserverYourRoom/Pods-ReserverYourRoom.release.xcconfig"; sourceTree = "<group>"; };
 		A24BBCC99B3C582F4841670C /* Pods_ReserverYourRoomUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ReserverYourRoomUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		F01575971DA1642F00F87FA4 /* RoomTableViewDelegateAndDataSource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RoomTableViewDelegateAndDataSource.swift; sourceTree = "<group>"; };
 		F080AF291D915B8200B73971 /* RoomService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RoomService.swift; sourceTree = "<group>"; };
 		F09644541D999D000024F00A /* UserService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserService.swift; sourceTree = "<group>"; };
 		F09644561D999D460024F00A /* BuildingService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BuildingService.swift; sourceTree = "<group>"; };
@@ -101,8 +101,8 @@
 			children = (
 				F09644621D99B0EF0024F00A /* RoomViewCell.swift */,
 				795800CF1D5A308C0001E06A /* RomOvViewController.swift */,
-				794E6B231D6393DD00F877CC /* RomOvRoomListViewController.swift */,
 				F09644601D99AC8A0024F00A /* TableViewCell.swift */,
+				F01575971DA1642F00F87FA4 /* RoomTableViewDelegateAndDataSource.swift */,
 			);
 			name = RoomOverview;
 			sourceTree = "<group>";
@@ -349,7 +349,6 @@
 			files = (
 				F096445D1D999D740024F00A /* ReservationService.swift in Sources */,
 				F09644631D99B0EF0024F00A /* RoomViewCell.swift in Sources */,
-				794E6B241D6393DD00F877CC /* RomOvRoomListViewController.swift in Sources */,
 				F080AF2A1D915B8200B73971 /* RoomService.swift in Sources */,
 				79866A531D60D700002787F5 /* Reservation.swift in Sources */,
 				F09644661D9AC26C0024F00A /* RoomDetail.swift in Sources */,
@@ -367,6 +366,7 @@
 				79F68E131D5E5D460067BDA8 /* Address.swift in Sources */,
 				F09644551D999D000024F00A /* UserService.swift in Sources */,
 				795800D01D5A308C0001E06A /* RomOvViewController.swift in Sources */,
+				F01575981DA1642F00F87FA4 /* RoomTableViewDelegateAndDataSource.swift in Sources */,
 				F096446B1D9CE3A90024F00A /* ReservationCell.swift in Sources */,
 				F096445F1D999D860024F00A /* WishService.swift in Sources */,
 				79F68E0F1D5E56E00067BDA8 /* Room.swift in Sources */,
