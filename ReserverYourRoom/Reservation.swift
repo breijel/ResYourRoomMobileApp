@@ -16,6 +16,7 @@ class Reservation {
     var start : String
     var end : String
     var roomUuid : String
+    var userUuid: String
     
     // MARK: Initialization
     required init(json: JSON){
@@ -23,6 +24,8 @@ class Reservation {
         self.roomUuid = json["roomId"].stringValue
         self.start = json["start"].stringValue
         self.end = json["end"].stringValue
+        self.userUuid = json["userId"].stringValue
 
     }
 }
+
