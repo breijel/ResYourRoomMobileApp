@@ -38,6 +38,16 @@ class RoomTableDelegateDataSource : NSObject, UITableViewDelegate, UITableViewDa
         
         let reservation = UITableViewRowAction(style: .normal, title: "Reservation") { action, index in
             print("Reservation button tapped")
+            let roomUuid: String = self.result[indexPath.row].room!.uuid
+            
+            let reservationUuid = self.dataModel.reservations.filter({ (
+                id, reservation) -> Bool in
+                reservation.roomUuid == roomUuid
+            })[0].value.uuid
+            
+            let reservation = self.dataModel.reservations[reservationUuid]
+
+            ReservationService.sharedInstance.save(reservation: reservation!)
         }
         reservation.backgroundColor = UIColor.blue
         

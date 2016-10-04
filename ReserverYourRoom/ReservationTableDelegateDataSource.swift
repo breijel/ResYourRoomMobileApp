@@ -23,16 +23,10 @@ class ReservationTableDelegateDataSource : NSObject, UITableViewDelegate, UITabl
         
         let deleteAction = UITableViewRowAction(style: .normal, title: "Abmelden") { action, index in
             print("Abmelden reservation button tapped")
-           /*
-            ReservationService.sharedInstance.removeReservation({ (json: JSON) in
-                if let results = json.array {
-                    for entry in results {
-                        print(entry)
-                    }
-                } else {
-                    print("error: could not parse json data remove reservation")
-                }}, reservation: self.reservations[0])
-        */
+            
+            let uuid: String = self.reservations[indexPath.row].uuid
+            ReservationService.sharedInstance.delete(reservationUuid: uuid)
+        
         }
         deleteAction.backgroundColor = UIColor.red
         

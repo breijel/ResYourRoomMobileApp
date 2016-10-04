@@ -27,5 +27,20 @@ class Reservation {
         self.userUuid = json["userId"].stringValue
 
     }
+    
+    func getJsonDictionary() -> [String: String] {
+        
+        let parameters: [String: String] = [
+            "uuid": self.uuid as String,
+            "roomId": self.roomUuid as String,
+            "start": self.start as String,
+            "end": self.end as String,
+            "userId": self.uuid as String
+        ]
+        
+        return parameters
+    }
+    
+    
 }
 

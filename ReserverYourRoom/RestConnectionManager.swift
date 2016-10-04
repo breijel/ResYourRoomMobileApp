@@ -35,7 +35,8 @@ class RestConnectionManager: NSObject {
         let request = NSMutableURLRequest(url: URL(string: path)!)
         
         // Set the method to POST
-        request.httpMethod = "POST"
+        request.httpMethod = "DELETE"
+        request.setValue("application/json; charset=utf-8", forHTTPHeaderField: "Content-Type")
         
         do {
             // Set the POST body for the request
@@ -55,6 +56,7 @@ class RestConnectionManager: NSObject {
             task.resume()
         } catch {
             // Create your personal error
+            print("Error during POST request")
             onCompletion(nil, nil)
         }
     }
