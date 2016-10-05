@@ -22,6 +22,10 @@ class WishTableDelegateDataSource : NSObject, UITableViewDelegate, UITableViewDa
         
         let deleteAction = UITableViewRowAction(style: .normal, title: "Abmelden") { action, index in
             print("Abmelden wish button tapped")
+            
+            let uuid: String = self.wishes[indexPath.row].uuid
+            WishService.sharedInstance.delete(wishUuid: uuid)
+            
         }
         deleteAction.backgroundColor = UIColor.red
         

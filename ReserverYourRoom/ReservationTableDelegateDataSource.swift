@@ -59,8 +59,8 @@ class ReservationTableDelegateDataSource : NSObject, UITableViewDelegate, UITabl
             room.uuid == roomUuid
         })[0].name
         
-        cell.startTime.text = reservaationElement.start
-        cell.endTime.text = reservaationElement.end
+        cell.startTime.text = "\(reservaationElement.start)"
+        cell.endTime.text = "\(reservaationElement.end)"
         
         return cell
     }

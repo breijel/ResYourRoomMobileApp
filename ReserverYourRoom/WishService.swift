@@ -9,6 +9,7 @@
 import Foundation
 import UIKit
 import SwiftyJSON
+import Alamofire
 
 class WishService: NSObject {
     
@@ -21,6 +22,17 @@ class WishService: NSObject {
         RestConnectionManager.sharedInstance.makeHTTPGetRequest(route, onCompletion: { json, err in
             onCompletion(json as JSON)
         })
+    }
+    
+    func delete(wishUuid: String){
+        
+        Alamofire
+            .request("http://localhost:8080/reserveyourroom/api/wish/remove/" + wishUuid, method: .delete, parameters: [:])
+            .responseString(completionHandler: { (response) in
+                print(response.request)  // original URL request
+                print(response.response) // URL response
+                print(response.result)   // result of response serialization
+            })
     }
     
 }

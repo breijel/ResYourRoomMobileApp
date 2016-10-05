@@ -39,30 +39,20 @@ class ReservationService: NSObject {
             .responseString(completionHandler: { (response) in
                 print(response.request)  // original URL request
                 print(response.response) // URL response
-                print(response.data)     // server data
                 print(response.result)   // result of response serialization
-                print(response.result.error)
-                
-                if let JSON = response.result.value {
-                    print("JSON: \(JSON)")
-                }
             })
     }
     
     func save(reservation: Reservation){
         
         Alamofire
-            .request("http://localhost:8080/reserveyourroom/api/reservation/", method: .post, parameters: reservation.getJsonDictionary())
+            .request("http://localhost:8080/reserveyourroom/api/reservation/", method: .post, parameters: reservation.getJsonDictionary(), encoding: URLEncoding.httpBody, headers: ["Content-Type": "application/json", "Accept": "application/json"])
             .responseString(completionHandler: { (response) in
                 print(response.request)  // original URL request
                 print(response.response) // URL response
                 print(response.data)     // server data
                 print(response.result)   // result of response serialization
-                print(response.result.error)
                 
-                if let JSON = response.result.value {
-                    print("JSON: \(JSON)")
-                }
             })
     }
 
